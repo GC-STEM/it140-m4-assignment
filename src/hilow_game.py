@@ -44,7 +44,6 @@ def main() -> None:
     # Prompt player for first guess.
     # TODO: Add code to prompt the player for their first guess.
 
-
     # Repeat guessing until the user guesses correctly.
     # TODO: Add code for a loop that repeats until the user guesses correctly.
 

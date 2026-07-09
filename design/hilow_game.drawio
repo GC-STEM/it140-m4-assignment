@@ -1,32 +1,224 @@
 <mxfile host="65bd71144e">
-    <diagram id="BxN_fVSwImqooR-HojqY" name="Program Name">
-        <mxGraphModel dx="875" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+    <diagram id="BxN_fVSwImqooR-HojqY" name="Flowchart">
+        <mxGraphModel dx="561" dy="416" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="TP0llparpRO0PuGGg3q6-1" value="&lt;h4&gt;&amp;lt;Program Name&amp;gt; Flowchart&lt;/h4&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;autosize=1;" parent="1" vertex="1">
-                    <mxGeometry x="255" y="12" width="340" height="110" as="geometry"/>
+                <mxCell id="4" value="&lt;h4&gt;High-Low Game Flowchart&lt;/h4&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="243" y="10" width="330" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="2JVWBYgFJigrqzPahJsY-1" value="Start &lt;br&gt;&amp;lt;program&amp;gt;" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" parent="1" vertex="1">
-                    <mxGeometry x="375" y="141" width="100" height="38" as="geometry"/>
+                <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="6" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;To edit this flowchart template, follow the directions below:&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;1. Create your own copy of&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 18px; background-color: transparent;&quot;&gt;`template.drawio.png`&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1.&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;background-color: transparent; font-size: 18px; scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); color: rgb(63, 63, 63);&quot;&gt;VS Code for EDU&lt;/b&gt;&lt;span style=&quot;background-color: transparent; font-size: 18px;&quot;&gt;: Click &quot;Save a copy and edit&quot; button in lower left corner.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;background-color: transparent; font-size: 18px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;2. &lt;b&gt;Other platforms&lt;/b&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent; scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 18px;&quot;&gt;Right-click on filename and select &quot;Download...&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;2. Open your copy in a &lt;a href=&quot;https://www.drawio.com/&quot;&gt;Draw-io&lt;/a&gt; compatabile editor&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1. &lt;b&gt;Web&lt;/b&gt;: Open in apps.diagrams.net&lt;font color=&quot;rgba(0, 0, 0, 0)&quot;&gt;app.diagrams.net&lt;/font&gt;&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2.&amp;nbsp;&lt;b&gt;PyCharm:&lt;/b&gt;&amp;nbsp;Install the&amp;nbsp;&lt;/span&gt;&lt;a style=&quot;background-color: transparent; scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); color: rgb(63, 63, 63);&quot; href=&quot;https://plugins.jetbrains.com/plugin/15635-diagrams-net-integration&quot;&gt;Diagrams.net&lt;/a&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;plugin&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Plugin:&amp;nbsp;https://plugins.jetbrains.com/plugin/15635-diagrams-net-integration&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Instructions: https://www.jetbrains.com/help/pycharm/managing-plugins.html&amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;3.&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;VS Code&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&amp;nbsp;Install the &lt;/span&gt;&lt;a style=&quot;background-color: transparent;&quot; href=&quot;https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio&quot;&gt;Draw.io&lt;/a&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt; extension&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;background-color: transparent; font-size: 18px; white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-size: 18px;&quot;&gt;. Desktop: Run &lt;/span&gt;&lt;font style=&quot;font-size: 15px; background-color: light-dark(rgb(224, 224, 224), rgb(237, 237, 237));&quot; face=&quot;Courier New&quot;&gt;code --install-extension hediet.vscode-drawio&lt;/font&gt;&lt;span style=&quot;background-color: transparent; font-size: 18px;&quot;&gt; from CLI&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2. for EDU: See 1-1 Setup Tasks --&amp;gt; Web Setup in Handbook&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;3. Delete this textbox before adding your flowchart symbols.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="70" y="200" width="710" height="530" as="geometry"/>
+                <mxCell id="6" value="Start" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="82.99999999999989" y="135.5" width="100" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="8" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Welcome message" style="strokeWidth=2;shape=mxgraph.flowchart.display;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="221" y="121" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="10" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Bounds validation loop" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="121" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="12" target="14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;br&gt;Lower bound" style="strokeWidth=2;shape=manualInput;rounded=1;size=26;arcSize=11;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="503" y="130" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="14" target="20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;br&gt;Upper bound" style="strokeWidth=2;shape=manualInput;rounded=1;size=26;arcSize=11;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="503" y="202" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="17" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=light-dark(#ededed, #ededed);" vertex="1" connectable="0" parent="15">
+                    <mxGeometry x="-0.298" y="2" relative="1" as="geometry">
+                        <mxPoint x="14" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Bounds validation loop&lt;/span&gt;&lt;div&gt;lower &amp;lt; upper?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;aspect=fixed;container=0;flipV=1;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="364" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" target="22">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="552.9999999999998" y="331" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="18">
+                    <mxGeometry x="-0.4141" y="5" relative="1" as="geometry">
+                        <mxPoint x="6" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Lower &amp;lt; upper?" style="strokeWidth=2;shape=mxgraph.flowchart.decision;fontSize=12;aspect=fixed;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="502.9999999999998" y="274" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="22" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Lower bound must be less than upper bound" style="strokeWidth=2;shape=mxgraph.flowchart.display;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="503" y="364" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="20" target="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="408" y="308"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="23">
+                    <mxGeometry x="-0.7017" y="2" relative="1" as="geometry">
+                        <mxPoint x="6" y="-12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="26" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Secret number = random integer" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="453" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="&lt;br&gt;User guess" style="strokeWidth=2;shape=manualInput;rounded=1;size=26;arcSize=11;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="542" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];textShadow=0;fontColor=light-dark(#ededed, #262626);" vertex="1" connectable="0" parent="28">
+                    <mxGeometry x="-0.1177" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-7" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="Guessing loop&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;guess == secret?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="613" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="27" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="34" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="32">
+                    <mxGeometry x="-0.3" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-4" y="-12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="guess in &lt;br&gt;bounds?" style="strokeWidth=2;shape=mxgraph.flowchart.decision;fontSize=12;aspect=fixed;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="502.9999999999998" y="613" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="37" target="43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="35">
+                    <mxGeometry x="-0.4" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="guess &amp;lt;&amp;nbsp;&lt;br&gt;secret" style="strokeWidth=2;shape=mxgraph.flowchart.decision;fontSize=12;aspect=fixed;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="502.9999999999998" y="700" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="51">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="773" y="647"/>
+                            <mxPoint x="773" y="914"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="Guess must be&lt;br&gt;in bounds" style="strokeWidth=2;shape=mxgraph.flowchart.display;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="643" y="613" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="34" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="40">
+                    <mxGeometry x="-0.2444" relative="1" as="geometry">
+                        <mxPoint x="16" y="-4" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="43" target="51">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="773" y="734"/>
+                            <mxPoint x="773" y="914"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="Nope, too high." style="strokeWidth=2;shape=mxgraph.flowchart.display;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="643" y="700" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="45" target="51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Nope, too low" style="strokeWidth=2;shape=mxgraph.flowchart.display;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="503" y="790" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="37" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                    <mxGeometry x="-0.43" y="2" relative="1" as="geometry">
+                        <mxPoint x="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="49" target="53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="Guessing loop&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;aspect=fixed;container=0;flipV=1;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="880" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="51" target="49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="&lt;br&gt;User guess" style="strokeWidth=2;shape=manualInput;rounded=1;size=26;arcSize=11;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;aspect=fixed;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="503" y="888.5" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="53" target="54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="You got it!" style="strokeWidth=2;shape=mxgraph.flowchart.display;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="358" y="990" width="100" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="End" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="502.9999999999999" y="1004.5" width="100" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=light-dark(#E7E7E7,#EDEDED);" edge="1" parent="1" target="53">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="358" y="647" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="330" y="647"/>
+                            <mxPoint x="330" y="1024"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#E7E7E7;" vertex="1" connectable="0" parent="55">
+                    <mxGeometry x="-0.4791" y="3" relative="1" as="geometry">
+                        <mxPoint x="9" y="-94" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=none;html=1;exitX=0.02;exitY=0.985;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.02;entryY=0.985;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=light-dark(#ededed, #ededed);" edge="1" parent="1" source="17" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=light-dark(#ededed, #ededed);" vertex="1" connectable="0" parent="57">
+                    <mxGeometry x="-0.6454" y="-1" relative="1" as="geometry">
+                        <mxPoint x="9" y="17" as="offset"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram name="Example" id="6uWCGEVDWqdnvIiDKMtO">
-        <mxGraphModel dx="875" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+    <diagram name="README" id="6uWCGEVDWqdnvIiDKMtO">
+        <mxGraphModel dx="561" dy="416" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="WjNtcwFtisM9cXZzO78z-0"/>
                 <mxCell id="WjNtcwFtisM9cXZzO78z-1" parent="WjNtcwFtisM9cXZzO78z-0"/>
-                <mxCell id="5oT3N-xmGETmmeSmgPYw-0" value="&lt;h4&gt;&amp;lt;Program Title&amp;gt; Specific Flowchart&lt;/h4&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;autosize=1;" parent="WjNtcwFtisM9cXZzO78z-1" vertex="1">
-                    <mxGeometry x="215" y="21" width="420" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="5oT3N-xmGETmmeSmgPYw-1" value="Start &amp;lt;program_name&amp;gt;" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;aspect=fixed;fontSize=12;whiteSpace=wrap;spacing=2;labelBackgroundColor=none;labelBorderColor=none;fontColor=default;html=1;container=0;" parent="WjNtcwFtisM9cXZzO78z-1" vertex="1">
-                    <mxGeometry x="374.9999999999999" y="120" width="100" height="38" as="geometry"/>
-                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>

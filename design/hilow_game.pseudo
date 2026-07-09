@@ -1,0 +1,25 @@
+START hilow_game
+
+    # Display welcome message to Bella.
+    # TODO: Add pseudocode here to display a welcome message to Bella.
+
+    # Get and validate lower and upper bounds of the guessing range.
+    # TODO: Add pseudocode here for a post-condition loop to get and validate
+    # lower and upper bounds of the guessing range.
+
+    # Set secret_number to random integer between lower and upper bounds, inclusive.
+    # TODO: Add pseudocode here to set secret number to a random integer.
+
+    # Prompt player for first guess.
+    # TODO: Add pseudocode here to prompt the player for their first guess.
+
+    # Repeat guessing until the user guesses correctly.
+    # TODO: Add pseudocode here for a loop that repeats until the user guesses correctly.
+
+    # Congratulate the user for guessing the secret number.
+    # TODO: Add pseudocode here to congratulate the user for guessing the secret number.
+
+END hilow_game
+
+# === References ===
+# TODO: Add references to any resources used to complete this assignment.

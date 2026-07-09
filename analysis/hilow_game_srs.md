@@ -1,8 +1,8 @@
 # Software Requirements Specification
 
 - **Course**: IT 140 - Introduction to Scripting
-- **Activity**: {{ModNum}}-{{ActNum}}: {{ActivityTitle}}
-- **Program Name**: {{Program-Name}}
+- **Activity**: 4-3: Pseudocode Revisited
+- **Program Name**: `hilow_game`
 
 ## 0. General Description
 

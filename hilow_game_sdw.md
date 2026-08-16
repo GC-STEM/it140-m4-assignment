@@ -16,11 +16,11 @@ For this assignment, **pseudocode in the Design phase is graded**. Construct and
 
 ---
 
-# 1. Analyze
+## 1. Analyze
 
 Use the Module Four Assignment Guidelines and Rubric, the Higher/Lower Game Sample Output, and [`analysis/hilow_game_srs.md`](analysis/hilow_game_srs.md).
 
-## 1.1 Purpose in Your Own Words
+### 1.1 Purpose in Your Own Words
 
 In one or two sentences, describe what the higher/lower game needs to accomplish.
 
@@ -28,7 +28,7 @@ In one or two sentences, describe what the higher/lower game needs to accomplish
 
 TODO: Write your own summary here.
 
-## 1.2 Inputs
+### 1.2 Inputs
 
 What information must the program receive from the player?
 
@@ -37,7 +37,7 @@ What information must the program receive from the player?
 - TODO: Identify the range inputs.
 - TODO: Identify the repeated game input.
 
-## 1.3 Validation Rules
+### 1.3 Validation Rules
 
 What makes a pair of bounds valid? What makes a guess valid?
 
@@ -47,7 +47,7 @@ What makes a pair of bounds valid? What makes a guess valid?
 - TODO: Guess validation rule
 - TODO: What the program should do when input does not satisfy each rule
 
-## 1.4 Processing and Decisions
+### 1.4 Processing and Decisions
 
 What information must the program generate, and what comparisons determine the feedback shown to the player?
 
@@ -56,7 +56,7 @@ What information must the program generate, and what comparisons determine the f
 - TODO: Random value the program needs
 - TODO: Decision outcomes the design must distinguish
 
-## 1.5 Repetition
+### 1.5 Repetition
 
 What work must repeat, and what condition causes each loop to stop?
 
@@ -65,7 +65,7 @@ What work must repeat, and what condition causes each loop to stop?
 - TODO: Bounds-validation repetition
 - TODO: Guessing-game repetition
 
-## 1.6 Outputs
+### 1.6 Outputs
 
 What kinds of information must the program communicate to the player?
 
@@ -73,7 +73,7 @@ What kinds of information must the program communicate to the player?
 
 TODO: Identify the required categories of output without choosing exact wording yet.
 
-## Analyze Checkpoint
+### Analyze Checkpoint
 
 Before continuing, verify that you can explain:
 
@@ -87,11 +87,11 @@ Before continuing, verify that you can explain:
 
 ---
 
-# 2. Design
+## 2. Design
 
 The pseudocode file is the **graded deliverable**. Use this section only to plan before editing it.
 
-## 2.1 Sequence Plan
+### 2.1 Sequence Plan
 
 List the major stages of the game in order without writing the completed pseudocode here.
 
@@ -103,7 +103,7 @@ List the major stages of the game in order without writing the completed pseudoc
 4. TODO
 5. TODO
 
-## 2.2 Loop Plan
+### 2.2 Loop Plan
 
 For each repeated part of the program, identify:
 
@@ -116,7 +116,7 @@ For each repeated part of the program, identify:
 
 TODO: Summarize the loop structure in words.
 
-## 2.3 Branch Plan
+### 2.3 Branch Plan
 
 What outcomes must the guess comparison distinguish?
 
@@ -124,7 +124,7 @@ What outcomes must the guess comparison distinguish?
 
 TODO: Identify the outcomes without writing the completed branch statements.
 
-## 2.4 Design Review
+### 2.4 Design Review
 
 After completing the graded pseudocode, verify:
 
@@ -140,13 +140,13 @@ After completing the graded pseudocode, verify:
 
 ---
 
-# 3. Construct — Optional Practice
+## 3. Construct — Optional Practice
 
 Complete this section only if you choose to implement your pseudocode in Python.
 
 Open [`src/README.md`](src/README.md), then use your **own completed pseudocode** to complete `src/hilow_game.py`.
 
-## 3.1 Design-to-Code Mapping
+### 3.1 Design-to-Code Mapping
 
 As you code, note how your pseudocode maps to Python concepts.
 
@@ -160,7 +160,7 @@ As you code, note how your pseudocode maps to Python concepts.
 | Repetition | TODO |
 | Output | TODO |
 
-## 3.2 Construction Checkpoint
+### 3.2 Construction Checkpoint
 
 - [ ] I completed the graded pseudocode before coding.
 - [ ] My Python program follows my pseudocode.
@@ -169,13 +169,13 @@ As you code, note how your pseudocode maps to Python concepts.
 
 ---
 
-# 4. Test — Optional Practice
+## 4. Test — Optional Practice
 
 Complete this section only if you constructed the optional Python program.
 
 Open [`tests/README.md`](tests/README.md).
 
-## 4.1 Manual Test Notes
+### 4.1 Manual Test Notes
 
 Include normal, invalid-bound, out-of-range-guess, too-low, too-high, and correct-guess behavior across your tests.
 
@@ -185,7 +185,7 @@ Include normal, invalid-bound, out-of-range-guess, too-low, too-high, and correc
 | TODO | TODO | TODO | TODO | TODO |
 | TODO | TODO | TODO | TODO | TODO |
 
-## 4.2 Debugging Notes
+### 4.2 Debugging Notes
 
 If a test did not pass, what did you change?
 
@@ -193,7 +193,7 @@ If a test did not pass, what did you change?
 
 TODO: Record a brief debugging note, or write `No changes needed`.
 
-## 4.3 Final SDLC Check
+### 4.3 Final SDLC Check
 
 - [ ] Analyze: I understand the requirements and sample behavior.
 - [ ] Design: My pseudocode meets the assignment rubric.

@@ -1,112 +1,93 @@
-# Software Design Document
+# Software Design Document (SDD)
 
 - **Course**: IT 140 - Introduction to Scripting
-- **Activity**: 4-3: Pseudocode Revisited
-- **Program Name**: `hilow_game`
+- **Activity**: Module Four Assignment
+- **Program name**: Higher/Lower Game
+- **Status**: Design reference; do not edit
 
-## 0. General Description
+## 0. Purpose
 
-{{TODO: Replace with a brief description of the planned solution. Explain how the design will meet the Software Requirements Specification (SRS), who will use the program, and the program's main purpose. Focus on how the program will be organized rather than repeating all requirements.}}
+This SDD helps you organize the design work without providing completed pseudocode. The graded design decisions belong in your own `hilow_game.pseudo` file.
 
-## 1. Design Goals and Constraints
+The current Module Four Assignment Guidelines and Rubric remains the official source for assignment requirements.
 
-The design shall:
+## 1. Design Inputs
 
-- [ ] 1.1 {{TODO: Replace with the main design goal, such as keeping the solution simple, readable, and appropriate for the course module.}}
+Use these sources while designing:
 
-- [ ] 1.2 {{TODO: Replace with important design constraints derived from the SRS and the assignment guidelines and rubric (G&R), such as required programming concepts, file structure, libraries, or input and output rules.}}
+1. The Module Four Assignment Guidelines and Rubric
+2. The Higher/Lower Game Sample Output
+3. [`../analysis/hilow_game_srs.md`](../analysis/hilow_game_srs.md)
+4. Your optional [`../hilow_game_sdw.md`](../hilow_game_sdw.md) notes
 
-- [ ] 1.x {{TODO: Add any activity-specific design goals or constraints.}}
+## 2. Design Model
 
-## 2. Solution Overview
+The solution needs to represent several related types of work:
 
-{{TODO: Describe the solution at a high level. Summarize the major steps the program will perform from start to finish. Identify the design approach used, such as a sequence of steps, function-oriented design, object-oriented design, event-driven design, or another approach appropriate for the activity.}}
+- **Input** — obtain range bounds and player guesses.
+- **Validation** — make sure bounds and guesses satisfy the assignment rules.
+- **Random selection** — establish the number the player is trying to guess.
+- **Decision branching** — distinguish too-low, too-high, and correct guesses.
+- **Repetition** — repeat work when input is invalid and continue the game until the correct guess.
+- **Output** — communicate prompts, validation feedback, guess feedback, and success.
 
-### Design Artifacts
+Your pseudocode should make the relationship among these steps clear without adding requirements that are not in the assignment.
 
-- **Flowchart**: [`activity_name.drawio`](./activity_name.drawio)
-- **Pseudocode**: [`activity_name.pseudo`](./activity_name.pseudo)
+## 3. Repetition to Represent
 
-{{TODO: Confirm that the flowchart and pseudocode represent the same planned solution described in this document.}}
+Module Four introduces loops, so stopping conditions are a major part of the design.
 
-## 3. Program Structure
+At minimum, your design needs to make clear:
 
-{{TODO: Divide the program into logical components. A component may be the main program, a function, a class, or another meaningful section of the solution. Use only the component types introduced in the course by this activity.}}
+- How the program responds when the lower and upper bounds do not satisfy the required relationship.
+- How the player gets another opportunity when a guess is outside the selected range.
+- How guessing continues after an incorrect valid guess.
+- What condition ends the guessing process.
 
-| # | Component | Responsibility | Input | Output | SRS Requirement(s) |
-| - | --------- | -------------- | ----- | ------ | ------------------ |
-| 1 | {{TODO: Name}} | {{TODO: State what this component does}} | {{TODO: Identify data received}} | {{TODO: Identify data produced or returned}} | {{TODO: Add requirement ID(s)}} |
+A loop must have a path toward its stopping condition. When reviewing your design, make sure each repeated section can eventually end when valid input or the correct guess is provided.
 
-## 4. Data Design
+## 4. Decision Branching to Represent
 
-{{TODO: Identify the important data the program will use. Include only data that helps explain the design, such as key variables, constants, collections, objects, or files. Use clear and descriptive planned names.}}
+Once a valid guess is available, the design must distinguish three relationships between the guess and the random number:
 
-| # | Data Name | Type or Structure | Purpose | Initial Value or Source | Valid Values or Rules |
-| - | --------- | ----------------- | ------- | ----------------------- | --------------------- |
-| 1 | {{TODO: Name}} | {{TODO: Type}} | {{TODO: Purpose}} | {{TODO: Initial value or source}} | {{TODO: Valid values, range, or format}} |
+- Lower
+- Higher
+- Equal
 
-## 5. Interface and Input/Output Design
+Each path needs the appropriate result, and the incorrect paths must allow the game to continue.
 
-{{TODO: Describe how users or other systems will interact with the program. Include prompts, expected input, validation rules, output formatting, files, application programming interfaces (APIs), or hardware interfaces as applicable. Refer to the SRS sample input and output rather than copying it unless additional design detail is needed.}}
+## 5. Pseudocode Design Constraints
 
-| # | Interface or I/O Element | Source or Destination | Format | Validation or Processing | Related Requirement(s) |
-| - | ------------------------ | --------------------- | ------ | ------------------------ | ---------------------- |
-| 1 | {{TODO: Prompt, output, file, API, or device}} | {{TODO: User, file, system, or device}} | {{TODO: Expected format}} | {{TODO: Validation or processing rule}} | {{TODO: Add requirement ID(s)}} |
+Your pseudocode should:
 
-## 6. Program Logic and Control Flow
+- Use clear, logically ordered steps.
+- Use indentation to show statements inside branches and loops.
+- Use appropriate pseudocode keywords.
+- Identify inputs and outputs.
+- Represent both input-validation needs.
+- Represent the required decision branches.
+- Represent repetition and its stopping conditions.
+- Be detailed enough to guide optional construction without becoming Python code.
 
-{{TODO: Explain the program's behavioral design. Describe the planned sequence, decisions, loops, function calls, events, or state changes. The description must be consistent with the flowchart and pseudocode.}}
+## 6. Design Review
 
-### 6.1 Main Processing Steps
+Use this table after completing `hilow_game.pseudo`.
 
-1. {{TODO: Describe the first major processing step.}}
-2. {{TODO: Describe the next major processing step.}}
-3. {{TODO: Continue until the program reaches its expected end state.}}
+| Question | Check |
+| --- | :---: |
+| Are lower and upper bounds obtained? | ☐ |
+| Is the relationship between the bounds validated? | ☐ |
+| Are invalid bounds handled by obtaining bounds again? | ☐ |
+| Is a random number established from the selected range? | ☐ |
+| Is a guess obtained and validated against the range? | ☐ |
+| Are too-low, too-high, and correct outcomes represented? | ☐ |
+| Do incorrect guesses lead to another guess? | ☐ |
+| Does a correct guess stop the guessing loop? | ☐ |
+| Are loop and branch bodies clearly indented? | ☐ |
+| Can the sample-output scenarios be traced through the design? | ☐ |
 
-### 6.2 Decisions and Repetition
+## 7. Optional Construction Handoff
 
-- **Decisions**: {{TODO: Identify important conditions and the action taken for each possible result.}}
-- **Repetition**: {{TODO: Identify any repeated processing, its stopping condition, and how the design prevents an unintended infinite loop. Delete if not applicable.}}
+If you continue into the optional Construct phase, treat your completed pseudocode as the design handed to the programmer.
 
-## 7. Error and Exception Handling
-
-{{TODO: Describe how the design will prevent, detect, and respond to invalid input, missing data, unavailable resources, or other expected errors. Keep the strategy appropriate for the course module and the requirements.}}
-
-| # | Error or Invalid Condition | Detection Method | Planned Response | Related Requirement(s) |
-| - | -------------------------- | ---------------- | ---------------- | ---------------------- |
-| 1 | {{TODO: Condition}} | {{TODO: How the program detects it}} | {{TODO: Message, correction, retry, or safe exit}} | {{TODO: Add requirement ID(s)}} |
-
-## 8. Design Decisions and Rationale
-
-{{TODO: Record the most important design choices and explain why each choice is appropriate. Consider simplicity, readability, maintainability, correctness, usability, security, performance, or reuse as applicable. Include meaningful alternatives that were considered when relevant.}}
-
-| # | Design Decision | Rationale | Alternative Considered |
-| - | --------------- | --------- | ---------------------- |
-| 1 | {{TODO: Decision}} | {{TODO: Explain how this choice supports the requirements and design goals}} | {{TODO: Alternative or "None"}} |
-
-## 9. Requirements Traceability
-
-{{TODO: Show how each SRS requirement is addressed by the design. Every applicable functional requirement and constraint should connect to at least one design component or artifact.}}
-
-| SRS Requirement | Design Component or Section | Supporting Artifact |
-| --------------- | --------------------------- | ------------------- |
-| {{TODO: Requirement ID}} | {{TODO: Component name or SDD section}} | {{TODO: Flowchart step, pseudocode section, or other artifact}} |
-
-## 10. Design Review Checklist
-
-Before beginning construction, confirm that:
-
-- [ ] 10.1 The design addresses every applicable SRS requirement.
-- [ ] 10.2 The program structure separates the solution into clear, manageable parts.
-- [ ] 10.3 The data names, types, sources, and validation rules are defined.
-- [ ] 10.4 The input, processing, and output steps are complete and consistent.
-- [ ] 10.5 Decisions, loops, functions, events, or state changes are described as applicable.
-- [ ] 10.6 Expected errors and invalid inputs have planned responses.
-- [ ] 10.7 The SDD, flowchart, and pseudocode describe the same solution.
-- [ ] 10.8 The design is simple enough to implement using concepts introduced by this activity.
-- [ ] 10.9 The design can be tested using the SRS acceptance test cases.
-- [ ] 10.x {{TODO: Add any activity-specific design review checks derived from the G&R.}}
-
-## 11. References
-
-{{TODO: List any references in APA7 Style used to create the design, such as the SRS, assignment guidelines, textbooks, or online resources.}}
+Implement what your design says. If coding reveals a design problem, revise the pseudocode first, then update the code so the design and implementation stay consistent.

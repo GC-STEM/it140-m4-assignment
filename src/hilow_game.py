@@ -1,25 +1,14 @@
-"""Play a higher/lower guessing game with user-defined bounds.
+"""TODO: Replace with a one-line summary of the optional practice program.
 
-Inputs:
-- lower_bound (int) from user input
-- upper_bound (int) from user input
-- user_guess (int) from user input
+Input:
+    TODO: Identify the major user inputs.
 
-Processing:
-- Validate bounds so lower < upper
-- Generate a random number in the range
-- Compare guesses until the random number is guessed
+Process:
+    TODO: Summarize validation, random selection, decisions, and repetition
+    from your pseudocode.
 
-Outputs:
-- Prompts, hints (too low/high), and success message printed to the console.
-
-Typical usage example:
-    Enter the lower bound: 1
-    Enter the upper bound: 10
-    Great, now guess a number between 1 and 10: 5
-    Nope, too low.
-    Guess another number: 7
-    You got it!
+Output:
+    TODO: Identify the major categories of console output.
 """
 
 # === Imports ===
@@ -28,27 +17,19 @@ from random import randint
 
 # === Main Function ===
 def main() -> None:
-    """Run the higher/lower guessing game."""
+    """Run the optional higher/lower game practice program."""
 
-    # Display welcome message to Bella.
-    # TODO: Add code to display a welcome message to Bella, the user.
+    # TODO: Obtain and validate the lower and upper bounds.
 
-    # Get and validate lower and upper bounds of the guessing range.
-    # TODO: Add code to get and validate lower and upper bounds from user input
-    # using a post-condition loop.
+    # TODO: Generate a random number from the valid range.
 
-    # Generate a random number between lower and upper bounds, inclusive.
-    # TODO: Add code to generate a random number between lower_bound and
-    # upper_bound, inclusive.
+    # TODO: Obtain and validate the player's first guess.
 
-    # Prompt player for first guess.
-    # TODO: Add code to prompt the player for their first guess.
+    # TODO: Repeat until the player guesses the random number.
+    #       Give appropriate too-low or too-high feedback for incorrect guesses.
+    #       Obtain and validate another guess when the game continues.
 
-    # Repeat guessing until the user guesses correctly.
-    # TODO: Add code for a loop that repeats until the user guesses correctly.
-
-    # Display correct guess message.
-    # TODO: Add code to display a message indicating the user guessed correctly.
+    # TODO: Display a success message after the correct guess.
 
 
 # === Main Guard ===
@@ -57,4 +38,4 @@ if __name__ == "__main__":
 
 
 # === References ===
-# TODO: Add references to any resources used to complete this assignment.
+# TODO: Add an APA-style reference for a source you used, or delete this line.

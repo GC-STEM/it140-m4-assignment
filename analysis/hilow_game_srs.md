@@ -1,63 +1,85 @@
-# Software Requirements Specification
+# Software Requirements Specification (SRS)
 
 - **Course**: IT 140 - Introduction to Scripting
-- **Activity**: 4-3: Pseudocode Revisited
-- **Program Name**: `hilow_game`
+- **Activity**: Module Four Assignment
+- **Program name**: Higher/Lower Game
+- **Status**: Provided requirements reference; do not edit
 
 ## 0. General Description
 
-{{TODO: Replace with a general description of the program derived from the assignment guidelines and rubric (G&R), such as what the program will do, who the intended users are, and any important context or background information that is relevant to understanding the requirements for this program.}}
+The Higher/Lower Game is a guessing game for Bella. The player chooses a lower and upper bound, the program selects a random number from that range, and the player continues guessing until the selected number is guessed correctly. The program provides feedback after guesses and validates the range information and guesses described by the assignment.
+
+This SRS reorganizes requirements from the Module Four Assignment Guidelines and Rubric and its Higher/Lower Game Sample Output. If this file and the current course materials differ, follow the current course materials.
 
 ## 1. Functional Requirements
 
 The program shall:
 
-- [ ] 1.1 {{TODO: Replace with specific functional requirements for this program derived from the G&R}}
+- **1.1** Prompt the player to enter a lower bound and an upper bound.
+- **1.2** Validate the bounds so the lower bound is less than the upper bound.
+- **1.3** Obtain new bounds when the entered bounds do not satisfy the required relationship.
+- **1.4** Generate a random number between the valid lower and upper bounds.
+- **1.5** Prompt the player to enter a guess between the selected bounds.
+- **1.6** Validate guesses so the player only proceeds with guesses that are between the selected bounds.
+- **1.7** Use decision branching to distinguish a guess that is:
+  - Lower than the random number
+  - Higher than the random number
+  - Equal to the random number
+- **1.8** Output appropriate feedback for each guess result.
+- **1.9** Continue prompting for guesses until the player guesses the random number correctly.
+- **1.10** End the guessing process after a correct guess and communicate that the guess is correct.
 
-## 2. Nonfunctional Requirements
+## 2. Design Requirements
 
-The program shall:
+The graded pseudocode shall:
 
-- [ ] 2.1 {{TODO: Replace in template with common nonfunctional requirements for this program derived from G&R}}
+- **2.1** Logically outline each step needed to satisfy the required game functionality.
+- **2.2** Identify the required user inputs and program outputs.
+- **2.3** Represent input validation for the bounds.
+- **2.4** Represent input validation for guesses.
+- **2.5** Use decision branching to control the too-low, too-high, and correct-guess paths.
+- **2.6** Use loops to represent repeated behavior, including continued guessing until the correct number is guessed.
+- **2.7** Use clear indentation and pseudocode keywords so the program flow is understandable.
 
-## 3. Technology Constraints
+## 3. Technology and File Constraints
 
-The program shall:
+- **3.1** The graded deliverable shall remain a pseudocode text file (`.pseudo`).
+- **3.2** The assignment does not require a flowchart deliverable.
+- **3.3** Python construction and testing are optional practice for this assignment and are not graded deliverables.
 
-- [ ] 3.1 {{TODO: Replace in template with common technology constraints for this program derived from the G&R}}
+## 4. Acceptance Conditions
 
-- [ ] 3.x {{TODO: Replace with any activity-specific technology constraints derived from the G&R.}}
+A design is ready for submission when a reader can follow the pseudocode from start to finish and determine how it handles each required behavior.
 
-## 4. Quality of Service Constraints
+Use the official Higher/Lower Game Sample Output and the following behavior checks when reviewing your design:
 
-The program shall:
+| Scenario | Condition | Expected behavior |
+| --- | --- | --- |
+| Valid bounds | Lower bound is less than upper bound | Program continues using the selected range |
+| Invalid bounds | Lower bound is not less than upper bound | Program explains the problem and obtains bounds again |
+| Guess below range | Guess is below the selected lower bound | Guess is rejected through input validation and another guess is obtained |
+| Guess above range | Guess is above the selected upper bound | Guess is rejected through input validation and another guess is obtained |
+| Guess too low | Valid guess is lower than the random number | Program indicates the guess is too low and continues |
+| Guess too high | Valid guess is higher than the random number | Program indicates the guess is too high and continues |
+| Correct guess | Guess equals the random number | Program indicates success and ends the guessing loop |
 
-- [ ] 4.1 {{TODO: Replace in template with common quality of service constraints for this program derived from G&R}}
+The sample output demonstrates these behaviors with example values. The assignment notes that output wording in your pseudocode may differ slightly from the sample.
 
-- [ ] 4.x {{TODO: Replace with any activity-specific quality of service constraints, such as performance, reliability, or security requirements.}}
+## 5. Important Interpretation Notes
 
-## Sample Input and Output
+The provided assignment materials require the program to generate a random number "between" the lower and upper bounds and to accept guesses "between" those bounds. They do not separately define endpoint terminology in the rubric text.
 
-{{TODO: Replace with any activity-specific notes about program input and output, such as formatting requirements or constraints on user input.}}
+When converting your pseudocode to optional Python practice, use the current course starter file and instructor guidance for the intended Python random-number operation. Do not add unrelated input rules or advanced error handling as graded requirements unless current course instructions require them.
 
-User program prompts and output are in normal font. User input is in **bold font**.
+## 6. Out of Scope Unless Your Instructor Adds a Requirement
 
-### Sample Run 1
+The assignment Guidelines and Rubric does not explicitly require:
 
-```text
+- Handling nonnumeric text entered where a number is expected
+- A fixed number of guesses
+- A score or guess counter
+- Multiple rounds after the correct number is guessed
+- Exact wording for every output message
+- A flowchart submission
 
-TODO: Replace with sample input and output for this program
-
-```
-
-### Sample Run 2
-
-```text
-
-TODO: Replace with sample input and output for this program
-
-```
-
-## Acceptance Test Cases
-
-{{TODO: Replace with acceptance test cases derived from the G&R and the sample input and output. Include normal, boundary, and invalid-input cases as applicable. For each test case, identify the requirement(s) being tested, the test input or condition, the expected result, and the pass criteria.}}
+Do not add these as graded requirements unless your instructor or current course materials direct you to do so.

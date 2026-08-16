@@ -1,25 +1,32 @@
+# IT 140 Module Four Assignment
+# Higher/Lower Game Pseudocode Template
+#
+# Complete the TODO prompts below with your own pseudocode.
+# Keep this file in .pseudo format for submission.
+#
+# Use clear indentation to show the structure of decisions and loops.
+# Your finished pseudocode should address every requirement in the
+# current Module Four Assignment Guidelines and Rubric.
+
 START hilow_game
 
-    # Display welcome message to Bella.
-    # TODO: Add pseudocode here to display a welcome message to Bella.
+    # Establish a valid guessing range.
+    TODO: Obtain the lower and upper bounds.
+    TODO: Use repetition and validation so the lower bound is less than the upper bound.
 
-    # Get and validate lower and upper bounds of the guessing range.
-    # TODO: Add pseudocode here for a post-condition loop to get and validate
-    # lower and upper bounds of the guessing range.
+    # Establish the number the player is trying to guess.
+    TODO: Generate the required random number from the valid range.
 
-    # Set secret_number to random integer between lower and upper bounds, inclusive.
-    # TODO: Add pseudocode here to set secret number to a random integer.
+    # Play until the correct number is guessed.
+    TODO: Obtain and validate a guess so it is within the selected range.
 
-    # Prompt player for first guess.
-    # TODO: Add pseudocode here to prompt the player for their first guess.
-
-    # Repeat guessing until the user guesses correctly.
-    # TODO: Add pseudocode here for a loop that repeats until the user guesses correctly.
-
-    # Congratulate the user for guessing the secret number.
-    # TODO: Add pseudocode here to congratulate the user for guessing the secret number.
+    TODO: Use a loop so guessing continues until the correct number is guessed.
+        TODO: Use decision branching to handle a valid guess that is too low.
+        TODO: Handle a valid guess that is too high.
+        TODO: Handle a correct guess.
+        TODO: Obtain and validate another guess when the game should continue.
 
 END hilow_game
 
 # === References ===
-# TODO: Add references to any resources used to complete this assignment.
+# TODO: Add references for sources you used, or delete this line if not needed.

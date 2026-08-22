@@ -1,6 +1,6 @@
 # This workflow is intentionally disabled because Python construction and testing
-# are optional practice for the Module Four Assignment. Rename to tests.yml only
-# if course maintainers intentionally decide to enable automated practice checks.
+# are optional practice for the Module Four Assignment. The active repository
+# checks are in tests.yml; do not rename this file to tests.yml.
 name: Optional Python Practice Tests
 
 on:
@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Run optional acceptance tests

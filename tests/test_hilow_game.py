@@ -48,8 +48,15 @@ class HigherLowerGamePracticeTests(unittest.TestCase):
         fake_output = StringIO()
 
         with (
-            patch("builtins.input", side_effect=[str(value) for value in inputs]) as fake_input,
-            patch.object(module, "randint", return_value=secret) as fake_randint,
+            patch(
+                "builtins.input",
+                side_effect=[str(value) for value in inputs],
+            ) as fake_input,
+            patch.object(
+                module,
+                "randint",
+                return_value=secret,
+            ) as fake_randint,
             redirect_stdout(fake_output),
         ):
             module.main()
@@ -70,7 +77,7 @@ class HigherLowerGamePracticeTests(unittest.TestCase):
         fake_randint.assert_called_once_with(10, 20)
 
     def test_incorrect_guesses_repeat_until_correct_guess(self):
-        """The game should obtain more guesses before ending on the correct one."""
+        """Incorrect guesses should repeat until the correct guess."""
         fake_input, _, _ = self.run_game(
             [10, 20, 15, 19, 17],
             secret=17,

@@ -21,7 +21,7 @@ def main() -> None:
 
     # TODO: Obtain and validate the lower and upper bounds.
 
-    # TODO: Generate a random number from the valid range.
+    # TODO: Generate a random number from the valid range using randint.
 
     # TODO: Obtain and validate the player's first guess.
 

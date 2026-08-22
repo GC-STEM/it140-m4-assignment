@@ -67,7 +67,9 @@ jobs:
         if: ${{ steps.mode.outputs.mode == 'starter' }}
         run: |
           python -m py_compile src/hilow_game.py
-          python -m ruff check src/hilow_game.py --output-format=github
+          python -m ruff check src/hilow_game.py \
+            --ignore F401 \
+            --output-format=github
           python .github/ci/check_starter.py
 
       - name: Write check summary

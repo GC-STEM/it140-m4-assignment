@@ -1,9 +1,3 @@
-<!--
-Draft artifact for human review.
-Target repository: GC-STEM/it140-m4-assignment
-Draft date: 2026-08-15
--->
-
 # IT 140 Module Four Assignment
 
 - **Course**: IT 140 - Introduction to Scripting
@@ -99,6 +93,10 @@ Complete these steps only once before beginning the assignment.
 If you already created an `it140-m4-assignment` repository in your GitHub account or already have an `it140-m4-assignment` folder in `~/Repos`, do not repeat these setup steps. Open your existing repository instead.
 
 If you need to start over, see [Reset Your Assignment Repository](#reset-your-assignment-repository).
+
+### 0. Complete the Module One Setup Tasks
+
+If you have not completed the [Module One Setup Tasks](https://github.com/GC-STEM/it140-m1-setup-tasks) on the Codio Virtual Desktop (CVD) or your local computer, do so now. Return here after completing those tasks.
 
 ### 1. Open the VS Code Integrated Terminal
 

@@ -21,7 +21,7 @@ SOURCE_TODO_MARKERS = (
     ),
     "TODO: Identify the major categories of console output.",
     "TODO: Obtain and validate the lower and upper bounds.",
-    "TODO: Generate a random number from the valid range.",
+    "TODO: Generate a random number from the valid range using randint.",
     "TODO: Obtain and validate the player's first guess.",
     "TODO: Repeat until the player guesses the random number.",
     "TODO: Display a success message after the correct guess.",

@@ -4,7 +4,7 @@
 # Complete the TODO prompts below with your own pseudocode.
 # Keep this file in .pseudo format for submission.
 #
-# Use clear indentation to show the structure of decisions and loops.
+# Use clear indentation to show decisions and repeated behavior.
 # Your finished pseudocode should address every requirement in the
 # current Module Four Assignment Guidelines and Rubric.
 
@@ -12,21 +12,18 @@ START hilow_game
 
     # Establish a valid guessing range.
     TODO: Obtain the lower and upper bounds.
-    TODO: Use repetition and validation so the lower bound is less than the upper bound.
+    TODO: Repeat as needed until the bounds satisfy the requirement.
 
     # Establish the number the player is trying to guess.
     TODO: Generate the required random number from the valid range.
 
-    # Play until the correct number is guessed.
-    TODO: Obtain and validate a guess so it is within the selected range.
-
-    TODO: Use a loop so guessing continues until the correct number is guessed.
-        TODO: Use decision branching to handle a valid guess that is too low.
-        TODO: Handle a valid guess that is too high.
-        TODO: Handle a correct guess.
-        TODO: Obtain and validate another guess when the game should continue.
+    # Play the game.
+    TODO: Obtain and validate a guess using the selected bounds.
+    TODO: Repeat the required game behavior until the correct guess.
+        TODO: Compare a valid guess and provide the required feedback.
+        TODO: Obtain and validate another guess when play continues.
 
 END hilow_game
 
 # === References ===
-# TODO: Add references for sources you used, or delete this line if not needed.
+# TODO: Add references for sources you used, or delete this line if unused.

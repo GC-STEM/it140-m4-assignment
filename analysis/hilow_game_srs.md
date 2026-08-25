@@ -1,85 +1,133 @@
 # Software Requirements Specification (SRS)
 
-- **Course**: IT 140 - Introduction to Scripting
-- **Activity**: Module Four Assignment
-- **Program name**: Higher/Lower Game
-- **Status**: Provided requirements reference; do not edit
+- **Course:** IT 140 - *Introduction to Scripting*
+- **Activity:** Module Four Assignment
+- **Program:** Higher/Lower Game
+- **Status:** Provided requirements reference; do not edit
 
 ## 0. General Description
 
-The Higher/Lower Game is a guessing game for Bella. The player chooses a lower and upper bound, the program selects a random number from that range, and the player continues guessing until the selected number is guessed correctly. The program provides feedback after guesses and validates the range information and guesses described by the assignment.
+The Higher/Lower Game allows a player to choose a lower and upper bound and then guess a randomly selected number between those bounds. The program provides feedback after valid guesses and continues until the player guesses the selected number correctly.
 
-This SRS reorganizes requirements from the Module Four Assignment Guidelines and Rubric and its Higher/Lower Game Sample Output. If this file and the current course materials differ, follow the current course materials.
+This SRS reorganizes requirements from the Module Four Assignment Guidelines and Rubric and the Higher/Lower Game Sample Output. It does not replace or expand those course materials. If this file and the current course materials differ, follow the current course materials.
 
 ## 1. Functional Requirements
 
-The program shall:
+The planned program shall:
 
-- **1.1** Prompt the player to enter a lower bound and an upper bound.
-- **1.2** Validate the bounds so the lower bound is less than the upper bound.
-- **1.3** Obtain new bounds when the entered bounds do not satisfy the required relationship.
-- **1.4** Generate a random number between the valid lower and upper bounds.
-- **1.5** Prompt the player to enter a guess between the selected bounds.
-- **1.6** Validate guesses so the player only proceeds with guesses that are between the selected bounds.
-- **1.7** Use decision branching to distinguish a guess that is:
-  - Lower than the random number
-  - Higher than the random number
-  - Equal to the random number
-- **1.8** Output appropriate feedback for each guess result.
-- **1.9** Continue prompting for guesses until the player guesses the random number correctly.
-- **1.10** End the guessing process after a correct guess and communicate that the guess is correct.
+- **FR-1 — Obtain bounds.** Prompt the player to enter a lower bound and an upper bound.
+- **FR-2 — Validate bounds.** Ensure the lower bound is less than the upper bound.
+- **FR-3 — Repeat invalid-bound input.** Obtain bounds again when the entered bounds do not satisfy the required relationship.
+- **FR-4 — Generate the target number.** Generate a random number between the valid lower and upper bounds.
+- **FR-5 — Obtain a guess.** Prompt the player to enter a guess between the selected bounds.
+- **FR-6 — Validate guesses.** Ensure the player proceeds only with guesses between the selected bounds.
+- **FR-7 — Repeat invalid-guess input.** Obtain another guess when the entered guess is outside the selected bounds.
+- **FR-8 — Compare a valid guess.** Use decision branching to distinguish a valid guess that is lower than, higher than, or equal to the target number.
+- **FR-9 — Output guess feedback.** Output appropriate feedback for too-low, too-high, and correct guesses.
+- **FR-10 — Continue the game.** Continue prompting for guesses until the target number is guessed correctly.
+- **FR-11 — End after success.** Stop the guessing process after a correct guess.
 
 ## 2. Design Requirements
 
-The graded pseudocode shall:
+The graded assignment has one design deliverable.
 
-- **2.1** Logically outline each step needed to satisfy the required game functionality.
-- **2.2** Identify the required user inputs and program outputs.
-- **2.3** Represent input validation for the bounds.
-- **2.4** Represent input validation for guesses.
-- **2.5** Use decision branching to control the too-low, too-high, and correct-guess paths.
-- **2.6** Use loops to represent repeated behavior, including continued guessing until the correct number is guessed.
-- **2.7** Use clear indentation and pseudocode keywords so the program flow is understandable.
+### DR-1 — Pseudocode
+
+Create `design/hilow_game.pseudo` that:
+
+- logically outlines each step needed to satisfy the required game functionality;
+- identifies the required user inputs and program outputs;
+- represents validation of the lower and upper bounds;
+- represents validation of guesses;
+- uses decision branching for too-low, too-high, and correct guesses;
+- uses loops for required repeated behavior;
+- makes the stopping condition for the guessing process clear; and
+- uses indentation and pseudocode keywords so the program flow is understandable.
+
+### DR-2 — Rubric Alignment
+
+The official rubric evaluates the pseudocode using three criteria:
+
+- **Logical Steps — 35%**
+- **Input/Output — 30%**
+- **Program Flow — 35%**
+
+A complete design should satisfy all three criteria without adding unrelated functionality.
 
 ## 3. Technology and File Constraints
 
-- **3.1** The graded deliverable shall remain a pseudocode text file (`.pseudo`).
-- **3.2** The assignment does not require a flowchart deliverable.
-- **3.3** Python construction and testing are optional practice for this assignment and are not graded deliverables.
+- **TC-1:** The graded deliverable shall remain a pseudocode text file (`.pseudo`).
+- **TC-2:** The assignment does not require a flowchart submission.
+- **TC-3:** Python construction and testing are optional practice and are not graded Module Four deliverables.
 
-## 4. Acceptance Conditions
+## 4. Behavior Verification Cases
 
-A design is ready for submission when a reader can follow the pseudocode from start to finish and determine how it handles each required behavior.
+A design is ready for final review when a reader can trace each required behavior through the pseudocode.
 
-Use the official Higher/Lower Game Sample Output and the following behavior checks when reviewing your design:
+The scenarios below restate or derive from the required behaviors. They are **repository learning checks**, not additional graded requirements and not prescribed output wording.
 
-| Scenario | Condition | Expected behavior |
+| Scenario | Condition | Behavior to trace |
 | --- | --- | --- |
-| Valid bounds | Lower bound is less than upper bound | Program continues using the selected range |
-| Invalid bounds | Lower bound is not less than upper bound | Program explains the problem and obtains bounds again |
-| Guess below range | Guess is below the selected lower bound | Guess is rejected through input validation and another guess is obtained |
-| Guess above range | Guess is above the selected upper bound | Guess is rejected through input validation and another guess is obtained |
-| Guess too low | Valid guess is lower than the random number | Program indicates the guess is too low and continues |
-| Guess too high | Valid guess is higher than the random number | Program indicates the guess is too high and continues |
-| Correct guess | Guess equals the random number | Program indicates success and ends the guessing loop |
+| Valid bounds | Lower bound is less than upper bound | Continue using the selected range |
+| Invalid bounds | Lower bound is not less than upper bound | Obtain bounds again |
+| Guess below range | Guess is below the selected lower bound | Reject it through validation and obtain another guess |
+| Guess above range | Guess is above the selected upper bound | Reject it through validation and obtain another guess |
+| Guess too low | Valid guess is lower than the target number | Output too-low feedback and continue |
+| Guess too high | Valid guess is higher than the target number | Output too-high feedback and continue |
+| Correct guess | Guess equals the target number | Output success and stop the guessing loop |
 
-The sample output demonstrates these behaviors with example values. The assignment notes that output wording in your pseudocode may differ slightly from the sample.
+Use the official Higher/Lower Game Sample Output for concrete examples of these behaviors.
 
-## 5. Important Interpretation Notes
+## 5. Interpretation Notes
 
-The provided assignment materials require the program to generate a random number "between" the lower and upper bounds and to accept guesses "between" those bounds. They do not separately define endpoint terminology in the rubric text.
+### 5.1 "Between" the Selected Bounds
 
-When converting your pseudocode to optional Python practice, use the current course starter file and instructor guidance for the intended Python random-number operation. Do not add unrelated input rules or advanced error handling as graded requirements unless current course instructions require them.
+The assignment requires the random number and valid guesses to be between the lower and upper bounds. The rubric does not separately define endpoint terminology.
+
+When you complete the optional Python practice, use the provided starter operation and current course guidance for the intended Python behavior. Do not turn an implementation detail into a new graded pseudocode requirement.
+
+### 5.2 Validation and Guess Comparison Are Different Decisions
+
+A guess must first satisfy the selected range before the game compares it with the target number.
+
+Keep these ideas distinct when reviewing the design:
+
+1. **Validation:** Is the guess within the selected bounds?
+2. **Game decision:** Is the valid guess too low, too high, or correct?
+
+### 5.3 Repetition Must Make Progress
+
+Each repeated section should have a clear condition that can eventually allow the program to continue or stop. A design that repeats without a path toward new input can describe an infinite loop instead of the required game behavior.
 
 ## 6. Out of Scope Unless Your Instructor Adds a Requirement
 
-The assignment Guidelines and Rubric does not explicitly require:
+The Module Four Assignment Guidelines and Rubric does not explicitly require:
 
-- Handling nonnumeric text entered where a number is expected
-- A fixed number of guesses
-- A score or guess counter
-- Multiple rounds after the correct number is guessed
-- Exact wording for every output message
-- A flowchart submission
+- handling nonnumeric text entered where a number is expected;
+- a fixed number of guesses;
+- a score or guess counter;
+- multiple rounds after the correct number is guessed;
+- exact wording for every output message; or
+- a flowchart submission.
 
 Do not add these as graded requirements unless your instructor or current course materials direct you to do so.
+
+## Requirements Traceability
+
+| Rubric criterion | Primary requirements |
+| --- | --- |
+| Logical Steps — 35% | FR-1 through FR-11; DR-1 |
+| Input/Output — 30% | FR-1, FR-5, FR-9; DR-1 |
+| Program Flow — 35% | FR-2, FR-3, FR-6 through FR-11; DR-1 |
+
+<!-- Artifact Metadata
+
+* Course: IT 140 - Introduction to Scripting
+* Artifact Title: Higher/Lower Game Software Requirements Specification
+* Artifact Type: Course-provided requirements reference
+* Artifact Purpose: Reorganize the official Module Four requirements for systematic analysis without adding graded requirements.
+* Artifact Version: {{semantic version number}}
+* Artifact Date: {{artifact date in YYYY-MM-DD format}}
+* Development Status: {{development status}}
+
+-->

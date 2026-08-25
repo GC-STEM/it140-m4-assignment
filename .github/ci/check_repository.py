@@ -1,4 +1,4 @@
-"""Validate the Module Four repository structure and assignment artifacts."""
+"""Validate the Module Four repository and assignment artifacts."""
 
 from __future__ import annotations
 
@@ -9,9 +9,9 @@ import struct
 import subprocess
 import sys
 import tomllib
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
-import xml.etree.ElementTree as ET
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -22,9 +22,7 @@ EDITABLE_PATHS = {
     "src/hilow_game.py",
 }
 
-GRADED_PATHS = {
-    "design/hilow_game.pseudo",
-}
+GRADED_PATHS = {"design/hilow_game.pseudo"}
 
 REQUIRED_FILES = (
     ".gitattributes",
@@ -65,11 +63,15 @@ PROVIDED_MARKDOWN = (
     "tests/README.md",
 )
 
+STARTER_MARKDOWN = ("hilow_game_sdw.md",)
+
 REQUIRED_TEXT_MARKERS = {
     "README.md": (
         "# IT 140 Module Four Assignment",
-        "## Complete the Assignment",
-        "## Submit Your Assignment",
+        "## 0. Meet the Prerequisites",
+        "## 1. Set Up or Open Your Assignment Repository",
+        "## 2. Complete the Assignment",
+        "## 3. Submit Your Assignment",
         "## Help and Support",
     ),
     ".github/RЕADME.md": (
@@ -80,32 +82,51 @@ REQUIRED_TEXT_MARKERS = {
     "analysis/README.md": (
         "# Analyze Phase | Understand the Higher/Lower Game",
         "## Purpose",
+        "## Deliverable",
         "## Check Your Work",
+        "## Help and Support",
     ),
     "analysis/hilow_game_srs.md": (
         "# Software Requirements Specification (SRS)",
         "## 1. Functional Requirements",
-        "## 4. Acceptance Conditions",
+        "## 2. Design Requirements",
+        "## 4. Behavior Verification Cases",
+        "## Requirements Traceability",
     ),
     "design/README.md": (
         "# Design Phase | Write the Higher/Lower Game Pseudocode",
         "## Graded Deliverable",
-        "## Check Against the Rubric",
+        "## 7. Review Against the Rubric",
+        "## 8. Review the Assignment Checks",
     ),
     "design/hilow_game_sdd.md": (
         "# Software Design Document (SDD)",
-        "## 2. Design Model",
-        "## 6. Design Review",
+        "## 2. Solution Overview",
+        "## 7. Requirements Traceability",
+        "## 8. Design Review",
+    ),
+    "hilow_game_sdw.md": (
+        "# Software Development Worksheet (SDW)",
+        "## How to Use This Worksheet",
+        "# Analyze Phase",
+        "## 7. Analyze Checkpoint",
+        "# Design Phase",
+        "## 12. Requirements-to-Design Traceability",
+        "## 16. Ready to Submit",
+        "# Optional Construct and Test Notes",
     ),
     "src/README.md": (
         "# Construct Phase | Optional Python Practice",
         "## Purpose",
-        "## Run the Program",
+        "## Deliverable",
+        "### 6. Run Incrementally",
     ),
     "tests/README.md": (
         "# Test Phase | Optional Practice",
-        "## 1. Test Manually",
-        "## 2. Run the Optional Practice Tests",
+        "## Purpose",
+        "## Deliverable",
+        "## 2. Test Manually",
+        "## 3. Optional: Run the Practice Tests",
     ),
 }
 
@@ -149,15 +170,18 @@ def read_text(relative_path: str) -> str:
 
 def check_required_files(checks: Checks) -> None:
     """Verify required repository files exist and are nonempty."""
+    missing = 0
     for relative_path in REQUIRED_FILES:
         path = REPO_ROOT / relative_path
         if not path.is_file():
             checks.error(f"Required file is missing: {relative_path}")
+            missing += 1
             continue
         if path.stat().st_size == 0:
             checks.error(f"Required file is empty: {relative_path}")
+            missing += 1
 
-    if not checks.errors:
+    if missing == 0:
         checks.note("Required repository files are present and nonempty.")
 
 
@@ -169,7 +193,9 @@ def check_json_and_toml(checks: Checks) -> None:
     try:
         settings = json.loads(settings_path.read_text(encoding="utf-8"))
         if not isinstance(settings, dict):
-            checks.error(".vscode/settings.json must contain a JSON object.")
+            checks.error(
+                ".vscode/settings.json must contain a JSON object."
+            )
     except (OSError, json.JSONDecodeError) as exc:
         checks.error(f"Invalid .vscode/settings.json: {exc}")
 
@@ -200,23 +226,26 @@ def check_required_text_markers(checks: Checks) -> None:
                 missing += 1
 
     if missing == 0:
-        checks.note("Major Markdown artifacts keep their expected sections.")
+        checks.note("Major Markdown artifacts keep expected sections.")
 
 
 def check_drawio(checks: Checks) -> None:
-    """Verify the provided Draw.io file remains parseable XML."""
+    """Verify the provided Draw.io reference remains parseable XML."""
     path = REPO_ROOT / "design/hilow_game.drawio"
     try:
         root = ET.parse(path).getroot()
     except (OSError, ET.ParseError) as exc:
         checks.error(
-            f"Invalid Draw.io XML in {path.relative_to(REPO_ROOT)}: {exc}"
+            "Invalid Draw.io XML in design/hilow_game.drawio: "
+            f"{exc}"
         )
         return
 
     tag = root.tag.rsplit("}", maxsplit=1)[-1]
     if tag != "mxfile":
-        checks.error("design/hilow_game.drawio must have an mxfile root.")
+        checks.error(
+            "design/hilow_game.drawio must have an mxfile root."
+        )
         return
 
     diagrams = [
@@ -227,11 +256,11 @@ def check_drawio(checks: Checks) -> None:
     if not diagrams:
         checks.error("The provided Draw.io file contains no diagram pages.")
     else:
-        checks.note("The provided Draw.io file is parseable XML.")
+        checks.note("The provided Draw.io reference is parseable XML.")
 
 
 def check_pseudocode(checks: Checks, mode: str) -> None:
-    """Verify the graded pseudocode has its expected outer structure."""
+    """Verify the graded pseudocode keeps its expected outer structure."""
     text = read_text("design/hilow_game.pseudo")
     start = text.find("START hilow_game")
     end = text.rfind("END hilow_game")
@@ -283,7 +312,7 @@ def without_code_fences(text: str) -> str:
 
 
 def local_link_target(raw_target: str) -> str | None:
-    """Return a local Markdown link path or None for external links."""
+    """Return a local Markdown path or None for external links."""
     target = raw_target.strip()
     if not target:
         return None
@@ -307,13 +336,16 @@ def local_link_target(raw_target: str) -> str | None:
 
 
 def check_markdown_links(checks: Checks) -> None:
-    """Verify local links in provided repository Markdown files."""
+    """Verify local links in repository Markdown files."""
     broken = 0
     repo_root = REPO_ROOT.resolve()
+    markdown_files = [*PROVIDED_MARKDOWN, *STARTER_MARKDOWN]
 
-    for relative_path in PROVIDED_MARKDOWN:
+    for relative_path in markdown_files:
         file_path = REPO_ROOT / relative_path
-        text = without_code_fences(file_path.read_text(encoding="utf-8"))
+        text = without_code_fences(
+            file_path.read_text(encoding="utf-8")
+        )
 
         for match in MARKDOWN_LINK.finditer(text):
             target = local_link_target(match.group(1))
@@ -325,7 +357,7 @@ def check_markdown_links(checks: Checks) -> None:
                 resolved.relative_to(repo_root)
             except ValueError:
                 checks.error(
-                    f"Local link leaves the repository in {relative_path}: "
+                    f"Local link leaves repository in {relative_path}: "
                     f"{target}"
                 )
                 broken += 1
@@ -338,11 +370,11 @@ def check_markdown_links(checks: Checks) -> None:
                 broken += 1
 
     if broken == 0:
-        checks.note("Local links in provided Markdown files resolve.")
+        checks.note("Local links in repository Markdown files resolve.")
 
 
 def check_social_preview(checks: Checks) -> None:
-    """Check the repository social-preview PNG signature, size, and ratio."""
+    """Check social-preview PNG signature, size, and ratio."""
     path = REPO_ROOT / ".github/social-preview.png"
     data = path.read_bytes()
 
@@ -371,7 +403,8 @@ def check_social_preview(checks: Checks) -> None:
         return
 
     checks.note(
-        f"Social preview is valid ({width}x{height}, {len(data)} bytes)."
+        f"Social preview is valid ({width}x{height}, "
+        f"{len(data)} bytes)."
     )
 
 
@@ -418,7 +451,7 @@ def student_changed_paths(checks: Checks) -> set[str] | None:
             "HEAD",
         )
     except RuntimeError as exc:
-        checks.error(f"Could not compare with the template commit: {exc}")
+        checks.error(f"Could not compare with template commit: {exc}")
         return None
 
     return {line for line in changed_text.splitlines() if line}
@@ -441,7 +474,7 @@ def check_student_change_scope(
 
     if not unexpected:
         checks.note(
-            "Committed changes are limited to student working/practice files."
+            "Committed changes are limited to student-editable files."
         )
 
 
@@ -456,7 +489,7 @@ def check_student_graded_changes(
     missing = sorted(GRADED_PATHS - changed)
     for path in missing:
         checks.error(
-            "Graded design file has not changed from the starter template: "
+            "Graded design file has not changed from starter template: "
             f"{path}"
         )
 
@@ -471,7 +504,7 @@ def parse_args() -> argparse.Namespace:
         "--mode",
         required=True,
         choices=("starter", "student"),
-        help="Validate the course starter or a personal student repository.",
+        help="Validate course starter or personal student repository.",
     )
     return parser.parse_args()
 

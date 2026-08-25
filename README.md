@@ -1,161 +1,124 @@
+<!-- To see this file in a clean, formatted view, right-click on the filename and choose "Open Preview." -->
+
 # IT 140 Module Four Assignment
 
-- **Course**: IT 140 - Introduction to Scripting
-- **Activity**: Module Four Assignment
-- **Design problem**: Higher/Lower Game
-- **Graded deliverable**: `design/hilow_game.pseudo`
-
-**Assignment progress:** **0 Start Here** → [1 Analyze](analysis/README.md) → [2 Design](design/README.md) → [3 Construct (Practice)](src/README.md) → [4 Test (Practice)](tests/README.md) → [5 Submit](#submit-your-assignment)
-
-## Start With the Assignment Guidelines and Rubric
-
-Before using this repository, open the **Module Four Assignment Guidelines and Rubric** in [D2L Brightspace](https://learn.snhu.edu/).
-
-Review the complete assignment, including:
-
-- Overview
-- Scenario
-- Prompt
-- Higher/Lower Game Sample Output
-- Pseudocode requirements
-- What to Submit
-- AI Usage
-- Assignment Rubric
-
-The **Module Four Assignment Guidelines and Rubric** is the official source for assignment requirements, grading criteria, and submission requirements. The **Higher/Lower Game Sample Output** is an official supporting resource for understanding expected program behavior. This repository provides starter files, reference documents, working files, and step-by-step guidance to help you complete those requirements.
+---
 
 > [!IMPORTANT]
-> This assignment is graded on the **pseudocode** you create in `design/hilow_game.pseudo`. Writing and testing a Python program is **optional practice** and is not a graded deliverable for this assignment.
+> **GitHub repository options**
+>
+> If you are completing this repository as part of your IT 140 assignment, do not use the GitHub options in the upper-right corner except as follows:
+>
+> - 🟡 **Watch — Not recommended:** Notifications may confuse students and are not needed.
+> - 🔴 **Fork — Do not use:** It will break the code later in this README file.
+> - 🟢 **Star — Recommended:** Later code will bookmark this repository so it is easier to find later.
+> - 🔴 **Use this template — Do not use:** It will break the code later in this README file.
+>
+> **Faculty**: Consider selecting **Watch** → **Custom** → **Releases + Issues** to receive major repository updates and follow reported problems.
 
-After reviewing the Guidelines and Rubric and Sample Output, return here to set up your personal assignment repository.
+---
 
-## About This Repository
+- **Course:** IT 140 - *Introduction to Scripting*
+- **Activity:** Module Four Assignment
+- **Design problem:** Higher/Lower Game
+- **Graded deliverable:**
+  - [`design/hilow_game.pseudo`](design/hilow_game.pseudo)
 
-This repository organizes the assignment around a simplified Software Development Life Cycle (SDLC):
+**Required assignment progress:** **0 Start Here** → [1 Analyze](analysis/README.md) → [2 Design](design/README.md) → [3 Submit](#3-submit-your-assignment)
+
+**Optional SDLC practice:** [Construct](src/README.md) → [Test](tests/README.md)
+
+> [!IMPORTANT]
+> The **Module Four Assignment Guidelines and Rubric in D2L Brightspace** is the official source for assignment requirements, grading criteria, and submission requirements. This repository provides starter files, reference documents, and step-by-step guidance to help you complete those requirements.
+
+## What You Are Doing in Module Four
+
+Module Four continues the design-before-code work from Module Three and adds **loops** to the input/output and decision-branching concepts you have already practiced.
+
+You will design pseudocode for a Higher/Lower Game. The game must:
+
+- obtain and validate lower and upper bounds;
+- generate a random number between those bounds;
+- obtain and validate guesses;
+- distinguish guesses that are too low, too high, or correct; and
+- repeat until the correct number is guessed.
+
+The repository also includes optional Python construction and testing practice so you can continue through the complete simplified Software Development Life Cycle (SDLC):
 
 > **Analyze → Design → Construct → Test**
 
-For the graded assignment, you will Analyze the problem and Design the solution as pseudocode. After your pseudocode is complete, you are encouraged to continue through Construct and Test for additional programming practice.
+For the graded Module Four assignment, however, your required path is:
 
-Module Four adds **loops** to concepts you have already practiced, including input/output and decision branching. The higher/lower game combines these concepts in one design.
+> **Analyze → Design → Submit**
+
+Construct and Test are optional practice and do not add graded deliverables.
+
+## What You May Edit
+
+### Graded and submitted
+
+Edit and submit:
+
+- [`design/hilow_game.pseudo`](design/hilow_game.pseudo) — graded pseudocode
+
+### Working notes; not submitted
+
+You may also edit:
+
+- [`hilow_game_sdw.md`](hilow_game_sdw.md) — Software Development Worksheet (SDW) working notes
+
+The SDW is a learning aid. It is not a graded deliverable unless your instructor specifically tells you otherwise.
+
+### Optional practice; not submitted
+
+After your graded pseudocode is complete, you may edit:
+
+- [`src/hilow_game.py`](src/hilow_game.py) — optional Python construction practice
+
+The provided test file is a practice tool. Do not edit it to make a test pass.
+
+### Course-provided reference and support files
+
+Do not edit the SRS, SDD, Draw.io file, README files, tests, `.github` files, repository configuration, or other course-managed files. They provide requirements, guidance, examples, checks, or configuration.
 
 > [!NOTE]
-> The Codio Virtual Desktop (CVD) is the reference environment for IT 140. If you completed the [Module One Setup Tasks](https://github.com/GC-STEM/it140-m1-setup-tasks) and use the CVD for this course, Git, GitHub CLI, VS Code, pseudocode support, Python, and the expected course repository configuration should already be available. We recommend all students use the CVD for coursework to minimize environment differences and troubleshooting issues.
->
-> You may also complete this assignment on a supported local computer configured through the Module One Setup Tasks. Local environments can vary, so some commands or troubleshooting steps may differ.
+> `design/hilow_game.drawio` is a course-provided reference file. The Module Four assignment does **not** require a flowchart submission.
 
-You will create your own personal GitHub repository from this course repository template and clone your repository to the CVD or your supported local computer. Your personal repository lets you:
+## 0. Meet the Prerequisites
 
-- Complete your assignment work
-- Save changes with Git
-- Push your work to GitHub for backup
-- Continue working from your own copy of the assignment
-- Practice a professional repository-based development workflow
+Before starting this assignment:
 
-The main assignment folders are:
+- [ ] Complete the GitHub and Course IDE portions of the [Module One Setup Tasks](https://github.com/GC-STEM/it140-m1-setup-tasks).
+- [ ] Complete the assigned Module Four zyBooks activities before relying on the assignment to teach loops from the beginning.
+- [ ] Open the **Module Four Assignment Guidelines and Rubric** and the **Higher/Lower Game Sample Output** in D2L Brightspace before editing the starter file.
 
-```text
-it140-m4-assignment/
-├── analysis/
-│   ├── README.md
-│   └── hilow_game_srs.md
-├── design/
-│   ├── README.md
-│   ├── hilow_game.pseudo
-│   └── hilow_game_sdd.md
-├── src/
-│   ├── README.md
-│   └── hilow_game.py
-├── tests/
-│   ├── README.md
-│   └── test_hilow_game.py
-├── hilow_game_sdw.md
-└── README.md
+Relevant Module Four zyBooks topics include:
+
+- **4.1 Loops (general)**
+- **4.2 While loops**
+- **4.3 More while examples**
+- **4.7 While vs. for loops**
+- **4.9 Developing programs incrementally**
+
+Earlier topics on input/output, `if`/`elif`/`else`, relational operators, Boolean expressions, and indentation also apply.
+
+## 1. Set Up or Open Your Assignment Repository
+
+You create your personal `it140-m4-assignment` repository only once.
+
+### If You Have Not Created It Yet
+
+Use the VS Code integrated terminal. On Windows, use **PowerShell** or **Git Bash**, not Command Prompt (`cmd.exe`).
+
+First confirm the GitHub account you use for IT 140:
+
+```bash
+gh auth status
 ```
 
-### What You May Edit
+If the correct account is not active, use the GitHub CLI sign-in or account-switching instructions from the Module One Setup Tasks before continuing.
 
-Your required assignment work should be limited to:
-
-- [`design/hilow_game.pseudo`](design/hilow_game.pseudo) — **graded pseudocode deliverable**
-
-You may also edit these working or practice files:
-
-- [`hilow_game_sdw.md`](hilow_game_sdw.md) — recommended Software Development Worksheet (SDW) notes; not submitted for grading
-- [`src/hilow_game.py`](src/hilow_game.py) — optional Python construction practice; not submitted for grading
-
-Leave the READMEs, SRS, SDD, tests, repository configuration, and other provided files unchanged unless your instructor or course instructions tell you otherwise.
-
-## Set Up Your Personal Assignment Repository
-
-Complete these steps only once before beginning the assignment.
-
-If you already created an `it140-m4-assignment` repository in your GitHub account or already have an `it140-m4-assignment` folder in `~/Repos`, do not repeat these setup steps. Open your existing repository instead.
-
-If you need to start over, see [Reset Your Assignment Repository](#reset-your-assignment-repository).
-
-### 0. Complete the Module One Setup Tasks
-
-If you have not completed the [Module One Setup Tasks](https://github.com/GC-STEM/it140-m1-setup-tasks) on the Codio Virtual Desktop (CVD) or your local computer, do so now. Return here after completing those tasks.
-
-### 1. Open the VS Code Integrated Terminal
-
-In VS Code, select:
-
-> **Terminal > New Terminal**
-
-You will use the integrated terminal in VS Code to create and clone your personal assignment repository.
-
-> [!IMPORTANT]
-> Windows users must use a **PowerShell** or **Git Bash** terminal in VS Code to run the commands in this file. A Command Prompt (`cmd.exe`) terminal will not work.
-
-### 2. Confirm Your GitHub Account
-
-1. Type the following command in the VS Code integrated terminal:
-
-   ```bash
-   gh auth status
-   ```
-
-2. Review the results and identify the active account.
-   - If your IT 140 GitHub account is listed but is not active, continue to Step 2.3.
-   - If your IT 140 GitHub account is not listed, continue to Step 2.4.
-   - If the correct IT 140 GitHub account is active, continue to Step 3.
-
-3. If your IT 140 GitHub account is listed but is not active, type the following command, replacing `your-github-username` with your GitHub username:
-
-   ```bash
-   gh auth switch --user your-github-username
-   ```
-
-   Then return to Step 2.1 to confirm that the correct account is now active.
-
-4. If your IT 140 GitHub account is not listed, type:
-
-   ```bash
-   gh auth login --web
-   ```
-
-   Follow the GitHub CLI prompts and sign in with the GitHub account you use for IT 140.
-
-5. When sign-in is complete, return to Step 2.1 and check your account again.
-
-6. Continue to Step 3 - Create and Clone Your Personal Repository.
-
-### 3. Create and Clone Your Personal Repository
-
-The following command block will:
-
-1. Go to your course `Repos` folder.
-2. Configure Git to use your GitHub CLI authentication.
-3. Star the original IT 140 assignment repository so it is easier to find again.
-4. Create your personal assignment repository in GitHub from the current course template.
-5. Make your personal repository private.
-6. Clone your new repository to your CVD or local computer.
-7. Enter the cloned repository folder.
-8. Show the GitHub repository connected to your local copy.
-
-Copy the entire command block and paste it into the VS Code integrated terminal:
+Then run:
 
 ```bash
 cd ~/Repos
@@ -166,137 +129,203 @@ cd it140-m4-assignment
 git remote -v
 ```
 
-Review the final output and confirm that the repository belongs to your GitHub account.
+Confirm that the final remote belongs to **your GitHub account**.
 
-If a command reports an error, do not repeat the entire command block. Review the error message and use the [Help and Support](#help-and-support) resources before continuing.
+> [!NOTE]
+> These creation commands are for the first successful setup only. If a personal repository or local folder already exists, open that existing work instead of creating another repository.
 
-### 4. Open Your Assignment Repository in VS Code
+### If You Already Created It
 
-In VS Code:
+Open VS Code and select **File > Open Folder**, then open:
 
-1. Select **File > Open Folder**.
-2. Open `~/Repos/it140-m4-assignment`.
-3. Confirm that `it140-m4-assignment` is the top-level folder shown in the Explorer.
+```text
+~/Repos/it140-m4-assignment
+```
 
-You are now working in your personal copy of the Module Four Assignment.
+If you are on another computer and your personal repository exists on GitHub but not locally, clone your existing repository:
 
-## Complete the Assignment
+```bash
+cd ~/Repos
+gh repo clone "$(gh api user --jq .login)/it140-m4-assignment"
+cd it140-m4-assignment
+git status
+```
 
-### 1. Analyze the Requirements
+## 2. Complete the Assignment
 
-Open the [Analyze Phase instructions](analysis/README.md).
+### 2.1 Analyze the Requirements
 
-Use the assignment Guidelines and Rubric, the Higher/Lower Game Sample Output, the provided Software Requirements Specification (SRS), and the optional SDW to make sure you understand:
+Open [Analyze Phase](analysis/README.md).
 
-- The lower-bound and upper-bound inputs
-- How invalid bounds must be handled
-- How the secret number is selected
-- The player's guess input and its validation
-- The three possible guess results: too low, too high, or correct
-- Why the game must repeat until the correct number is guessed
+During Analyze, focus on **what** the Higher/Lower Game must do. Use:
 
-Do not begin by writing Python code. The purpose of this assignment is to practice designing the solution before constructing it.
+- the official Guidelines and Rubric in D2L Brightspace;
+- the official Higher/Lower Game Sample Output;
+- the provided [Software Requirements Specification (SRS)](analysis/hilow_game_srs.md); and
+- the optional [Software Development Worksheet (SDW)](hilow_game_sdw.md).
 
-### 2. Create the Graded Pseudocode
+Pay particular attention to **what repeats** and **what stops each repetition**. The assignment requires validation for both the selected bounds and the player's guesses.
 
-Open the [Design Phase instructions](design/README.md).
+### 2.2 Create the Graded Pseudocode
+
+Open [Design Phase](design/README.md).
 
 Complete:
 
-[`design/hilow_game.pseudo`](design/hilow_game.pseudo)
+- [`design/hilow_game.pseudo`](design/hilow_game.pseudo)
 
-Your pseudocode should logically describe the complete game, including input/output, validation, decision branching, and loops. Review it against the assignment Guidelines and Rubric before continuing.
+Your pseudocode should logically outline the required game, identify inputs and outputs, and use decision branching and loops to control program flow.
 
-### 3. Optional Practice: Construct the Python Program
+The rubric weights are:
 
-After your graded pseudocode is complete, you are encouraged to continue to the [Construct Phase](src/README.md).
+- **Logical Steps — 35%**
+- **Input/Output — 30%**
+- **Program Flow — 35%**
 
-Use your own completed pseudocode as the plan for completing `src/hilow_game.py`. This practice helps connect program design to working Python code.
+Review the completed pseudocode against the current Guidelines and Rubric before submission.
 
-This file is **not required for the Module Four Assignment grade**.
+### 2.3 Save Your Work to GitHub
 
-### 4. Optional Practice: Test the Python Program
+Save your files normally while you work in VS Code. Periodically commit and push your assignment work so your personal GitHub repository contains a current backup.
 
-If you complete the optional Python program, continue to the [Test Phase](tests/README.md).
-
-Use the official sample-output scenarios, additional manual cases, and the provided optional practice tests to check your implementation.
-
-Testing is **not required for the Module Four Assignment grade**, but it provides practice with the full SDLC and helps you see whether the pseudocode design can be implemented successfully.
-
-### 5. Save Your Work to GitHub
-
-Save your files normally while you work in VS Code.
-
-Periodically commit and push your assignment work so your personal GitHub repository contains a current backup. From the repository root in the VS Code integrated terminal, run:
+You can use the **Source Control** tools in VS Code or run the following from the repository root:
 
 ```bash
 cd ~/Repos/it140-m4-assignment
 git status
-git add design/hilow_game.pseudo hilow_game_sdw.md src/hilow_game.py
+git add hilow_game_sdw.md design/hilow_game.pseudo src/hilow_game.py
 git commit -m "Save Module Four assignment progress"
 git push
 ```
 
-Git ignores unchanged files, so including optional files in the `git add` command does not create extra work if you did not edit them.
+These commands stage only the student working, graded design, and optional practice files.
+
+If Git reports that there is nothing to commit, your local files do not contain new changes that need to be saved to GitHub.
 
 > [!NOTE]
-> GitHub is a backup and version-control tool for this assignment. **D2L Brightspace remains the assignment submission, grading, and feedback system.**
+> GitHub is used to develop and back up your work. **Assignment submission, grading, and instructor feedback remain in D2L Brightspace.**
 
-## Submit Your Assignment
+### 2.4 Review the Assignment Checks
 
-Before submitting, return to the **Module Four Assignment Guidelines and Rubric** in D2L Brightspace and verify the current submission requirements.
+Each push runs the **Assignment Checks** workflow in your personal repository.
 
-The graded deliverable identified by the provided assignment is:
+While you are still working, a red **X** can simply mean that the graded pseudocode is still in the starter state. As you complete your work, the checks can verify basic repository conditions such as:
 
-- `design/hilow_game.pseudo`
+- required course files are still present;
+- committed changes are limited to student-editable files;
+- the graded pseudocode changed from its starter state;
+- the pseudocode retains its outer `START` / `END` structure;
+- starter `TODO:` prompts are no longer present in the graded pseudocode; and
+- course-provided Markdown and configuration remain internally consistent.
 
-### Final Check
+The checks also verify that the provided Draw.io reference remains readable, but the Draw.io file is **not** a graded Module Four deliverable.
 
-- [ ] I completed the pseudocode in `design/hilow_game.pseudo`.
-- [ ] My pseudocode logically outlines the required game steps.
-- [ ] My pseudocode identifies the required inputs and outputs.
-- [ ] My pseudocode validates the lower and upper bounds.
-- [ ] My pseudocode validates guesses against the selected bounds.
-- [ ] My pseudocode uses decision branching for too-low, too-high, and correct guesses.
-- [ ] My pseudocode uses loops so the game continues as required.
-- [ ] I reviewed the Higher/Lower Game Sample Output.
-- [ ] I reviewed the current Module Four Assignment Guidelines and Rubric.
-- [ ] I saved my `.pseudo` file before submitting it.
+The Assignment Checks **do not grade the quality or correctness of your pseudocode**. A green check is not a grade and does not submit your assignment.
 
-Submit the `.pseudo` file in **D2L Brightspace** according to the current assignment instructions.
+To review a run:
 
-The optional SDW, Python file, and tests are not graded deliverables unless your instructor specifically tells you otherwise.
+1. Open your personal repository on GitHub.
+2. Select **Actions**.
+3. Open the most recent **Assignment Checks** run.
+4. Open **Check assignment repository** to see the results.
 
-## Reset Your Assignment Repository
+## 3. Submit Your Assignment
 
-Use this only if you intentionally want to discard your current local and GitHub copies and start again from the current course template.
+In D2L Brightspace, open the **Module Four Assignment** and follow the current submission instructions.
 
-> [!CAUTION]
-> Starting over can permanently discard work that exists only in your current repository. Save any work you need before resetting.
+Submit exactly the graded design file required by the assignment:
 
-1. Delete or rename the local `~/Repos/it140-m4-assignment` folder.
-2. Delete the personal `it140-m4-assignment` repository from your GitHub account if you intend to reuse the same name.
-3. Return to [Create and Clone Your Personal Repository](#3-create-and-clone-your-personal-repository).
+- [`design/hilow_game.pseudo`](design/hilow_game.pseudo)
 
-Do not reuse an assignment repository from an earlier course attempt. Creating a repository from the current course template ensures that you receive the current assignment files and instructions.
+Do **not** submit the SDW, Draw.io reference, optional Python practice file, test file, GitHub Actions output, SRS, SDD, or repository README files unless your instructor specifically requests them.
+
+## Optional: Continue Through Construct and Test
+
+After the graded pseudocode is complete and ready to submit, you may continue through the remaining SDLC phases for practice:
+
+1. [Construct](src/README.md) — translate your own pseudocode into a small Python program.
+2. [Test](tests/README.md) — manually test the program and optionally run the provided practice tests.
+
+Optional practice is intended to help you connect design to implementation before the larger course projects. It does not change the one-file Module Four submission.
+
+## Restore or Restart Your Assignment Repository
+
+Choose the recovery method that matches the problem. Preserve existing work whenever possible.
+
+### Restore a Damaged Local Copy From GitHub
+
+Use this when the copy you previously pushed to GitHub is good but the local folder is damaged or confusing.
+
+#### CVD, Linux, macOS, or Git Bash on Windows
+
+```bash
+cd ~/Repos
+mv it140-m4-assignment "it140-m4-assignment-local-backup-$(date +%Y%m%d-%H%M%S)"
+gh repo clone "$(gh api user --jq .login)/it140-m4-assignment"
+cd it140-m4-assignment
+git status
+```
+
+#### Windows PowerShell
+
+```powershell
+cd ~/Repos
+Rename-Item it140-m4-assignment "it140-m4-assignment-local-backup-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+gh repo clone "$(gh api user --jq .login)/it140-m4-assignment"
+cd it140-m4-assignment
+git status
+```
+
+### Start Over From the Current Course Template
+
+Use this only when you intentionally want a fresh assignment copy. Preserve the old local folder and GitHub repository first.
+
+#### CVD, Linux, macOS, or Git Bash on Windows
+
+```bash
+cd ~/Repos
+backup="it140-m4-assignment-backup-$(date +%Y%m%d-%H%M%S)"
+mv it140-m4-assignment "$backup"
+gh repo rename "$backup" --repo "$(gh api user --jq .login)/it140-m4-assignment" --yes
+gh repo create it140-m4-assignment --template GC-STEM/it140-m4-assignment --private --clone
+cd it140-m4-assignment
+git remote -v
+```
+
+#### Windows PowerShell
+
+```powershell
+cd ~/Repos
+$backup = "it140-m4-assignment-backup-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+Rename-Item it140-m4-assignment $backup
+gh repo rename $backup --repo "$(gh api user --jq .login)/it140-m4-assignment" --yes
+gh repo create it140-m4-assignment --template GC-STEM/it140-m4-assignment --private --clone
+cd it140-m4-assignment
+git remote -v
+```
+
+> [!IMPORTANT]
+> Starting over does not automatically copy work from the preserved repository into the new one.
 
 ## Help and Support
 
-Start with the [Module Four Assignment Wiki](https://github.com/GC-STEM/it140-m4-assignment/wiki) for supplemental explanations and common questions.
+Use the [Module Four Assignment Wiki](https://github.com/GC-STEM/it140-m4-assignment/wiki) for supplemental explanations of the SDLC, assignment documents, pseudocode, loops, course IDE tools, Git/GitHub, testing, sources, and AI use.
 
-Use the repository's [Issues](https://github.com/GC-STEM/it140-m4-assignment/issues) area for a reproducible technical problem with the repository, starter files, or repository instructions.
+- Use [GitHub Discussions](https://github.com/GC-STEM/it140-m4-assignment/discussions) for questions about using this repository that do not request a completed graded solution.
+- Use [GitHub Issues](https://github.com/GC-STEM/it140-m4-assignment/issues) to report a technical problem with the provided repository, starter files, documentation, automated checks, or course tools.
+- Contact your instructor through D2L Brightspace for assignment requirements, grading, feedback, or course-specific questions.
 
-Use the repository's [Discussions](https://github.com/GC-STEM/it140-m4-assignment/discussions) area for repository-related questions that may help other students.
+Do not post your completed graded pseudocode publicly when asking for help.
 
-Do **not** ask for or post a completed pseudocode solution. Ask for explanations or resources that help you discover the solution yourself.
+<!-- Artifact Metadata
 
-Post questions about course content that are not specific to this repository in your section's **General Questions** discussion topic.
+* Course: IT 140 - Introduction to Scripting
+* Artifact Title: Module Four Assignment Repository README
+* Artifact Type: Required assignment guidance
+* Artifact Purpose: Guide students through setup, analysis, pseudocode design, submission, and optional SDLC practice for the Module Four Assignment.
+* Artifact Description: Students create and submit Higher/Lower Game pseudocode; optional construction and testing practice extends the assignment through the simplified SDLC without adding graded deliverables.
+* Artifact Version: {{semantic version number}}
+* Artifact Date: {{artifact date in YYYY-MM-DD format}}
+* Development Status: {{development status}}
 
-Contact your instructor through the course-approved D2L Brightspace channel for questions related to:
-
-- Assignment submissions
-- Grading
-- Rubric feedback
-- Deadlines
-- Accommodations
-- Your individual work
+-->

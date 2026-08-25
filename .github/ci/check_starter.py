@@ -1,4 +1,4 @@
-"""Validate the intentional starter state of the Module Four assignment."""
+"""Validate the intentional starter state of Module Four."""
 
 from __future__ import annotations
 
@@ -11,14 +11,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_PATH = REPO_ROOT / "src/hilow_game.py"
 TEST_PATH = REPO_ROOT / "tests/test_hilow_game.py"
 PSEUDOCODE_PATH = REPO_ROOT / "design/hilow_game.pseudo"
+SDW_PATH = REPO_ROOT / "hilow_game_sdw.md"
 
 SOURCE_TODO_MARKERS = (
     "TODO: Replace with a one-line summary",
     "TODO: Identify the major user inputs.",
-    (
-        "TODO: Summarize validation, random selection, decisions, "
-        "and repetition"
-    ),
+    "TODO: Summarize validation, random selection, decisions, and",
     "TODO: Identify the major categories of console output.",
     "TODO: Obtain and validate the lower and upper bounds.",
     "TODO: Generate a random number from the valid range using randint.",
@@ -29,29 +27,23 @@ SOURCE_TODO_MARKERS = (
 
 PSEUDOCODE_TODO_MARKERS = (
     "TODO: Obtain the lower and upper bounds.",
-    (
-        "TODO: Use repetition and validation so the lower bound is less "
-        "than the upper bound."
-    ),
+    "TODO: Repeat as needed until the bounds satisfy the requirement.",
     "TODO: Generate the required random number from the valid range.",
-    (
-        "TODO: Obtain and validate a guess so it is within the selected "
-        "range."
-    ),
-    (
-        "TODO: Use a loop so guessing continues until the correct number "
-        "is guessed."
-    ),
-    (
-        "TODO: Use decision branching to handle a valid guess that is "
-        "too low."
-    ),
-    "TODO: Handle a valid guess that is too high.",
-    "TODO: Handle a correct guess.",
-    (
-        "TODO: Obtain and validate another guess when the game should "
-        "continue."
-    ),
+    "TODO: Obtain and validate a guess using the selected bounds.",
+    "TODO: Repeat the required game behavior until the correct guess.",
+    "TODO: Compare a valid guess and provide the required feedback.",
+    "TODO: Obtain and validate another guess when play continues.",
+)
+
+SDW_REQUIRED_MARKERS = (
+    "# Software Development Worksheet (SDW)",
+    "## How to Use This Worksheet",
+    "# Analyze Phase",
+    "## 7. Analyze Checkpoint",
+    "# Design Phase",
+    "## 12. Requirements-to-Design Traceability",
+    "## 16. Ready to Submit",
+    "# Optional Construct and Test Notes",
 )
 
 EXPECTED_TEST_CASES = {
@@ -85,6 +77,7 @@ class StarterChecks:
         if not self.errors:
             print("PASS: Course starter state is intentionally incomplete.")
             print("PASS: Graded pseudocode template is intact.")
+            print("PASS: Optional SDW scaffolding is intact.")
             print("PASS: Optional Python practice scaffolding is intact.")
             print("PASS: Optional practice-test definitions are intact.")
             return
@@ -96,7 +89,7 @@ class StarterChecks:
 
 
 def is_docstring_statement(node: ast.stmt) -> bool:
-    """Return True if a statement is a string-expression docstring."""
+    """Return True for a string-expression docstring statement."""
     return (
         isinstance(node, ast.Expr)
         and isinstance(node.value, ast.Constant)
@@ -105,7 +98,7 @@ def is_docstring_statement(node: ast.stmt) -> bool:
 
 
 def check_source(checks: StarterChecks) -> None:
-    """Verify the optional source stays a valid, incomplete starter."""
+    """Verify optional source stays a valid, incomplete starter."""
     text = SOURCE_PATH.read_text(encoding="utf-8")
     try:
         tree = ast.parse(text, filename=str(SOURCE_PATH))
@@ -142,8 +135,8 @@ def check_source(checks: StarterChecks) -> None:
         body = main_functions[0].body
         if len(body) != 1 or not is_docstring_statement(body[0]):
             checks.error(
-                "Optional starter main() must remain intentionally incomplete; "
-                "only its docstring should be executable."
+                "Optional starter main() must remain incomplete; only "
+                "its docstring should be executable."
             )
 
     guards = [
@@ -168,12 +161,12 @@ def check_source(checks: StarterChecks) -> None:
 
 
 def check_pseudocode(checks: StarterChecks) -> None:
-    """Verify the graded pseudocode template markers remain intact."""
+    """Verify graded pseudocode template markers remain intact."""
     text = PSEUDOCODE_PATH.read_text(encoding="utf-8")
-    if "START hilow_game" not in text or "END hilow_game" not in text:
-        checks.error(
-            "Pseudocode starter must keep START and END hilow_game."
-        )
+    if "START hilow_game" not in text:
+        checks.error("Pseudocode starter must keep START hilow_game.")
+    if "END hilow_game" not in text:
+        checks.error("Pseudocode starter must keep END hilow_game.")
 
     for marker in PSEUDOCODE_TODO_MARKERS:
         if marker not in text:
@@ -182,10 +175,21 @@ def check_pseudocode(checks: StarterChecks) -> None:
             )
 
 
+def check_sdw(checks: StarterChecks) -> None:
+    """Verify optional SDW keeps guided Analyze/Design structure."""
+    text = SDW_PATH.read_text(encoding="utf-8")
+    for marker in SDW_REQUIRED_MARKERS:
+        if marker not in text:
+            checks.error(f"SDW starter is missing section: {marker!r}")
+
+    if "TODO:" not in text:
+        checks.error("SDW starter should remain intentionally incomplete.")
+
+
 def run_game_case(
     function: ast.FunctionDef,
 ) -> tuple[tuple[int, ...], int] | None:
-    """Return the controlled input and secret passed to self.run_game()."""
+    """Return controlled input and secret passed to self.run_game()."""
     for node in ast.walk(function):
         if not isinstance(node, ast.Call):
             continue
@@ -216,7 +220,7 @@ def run_game_case(
 
 
 def check_tests(checks: StarterChecks) -> None:
-    """Verify the optional practice-test suite still has three cases."""
+    """Verify optional practice-test suite keeps three cases."""
     text = TEST_PATH.read_text(encoding="utf-8")
     try:
         tree = ast.parse(text, filename=str(TEST_PATH))
@@ -252,7 +256,9 @@ def check_tests(checks: StarterChecks) -> None:
         missing = sorted(expected - actual)
         extra = sorted(actual - expected)
         if missing:
-            checks.error(f"Practice tests are missing: {', '.join(missing)}")
+            checks.error(
+                f"Practice tests are missing: {', '.join(missing)}"
+            )
         if extra:
             checks.error(
                 f"Unexpected practice tests found: {', '.join(extra)}"
@@ -273,13 +279,14 @@ def check_tests(checks: StarterChecks) -> None:
     required_markers = (
         'PROJECT_ROOT / "src" / "hilow_game.py"',
         '"builtins.input"',
-        'patch.object(',
+        "patch.object(",
         '"randint"',
     )
     for marker in required_markers:
         if marker not in text:
             checks.error(
-                f"Practice-test scaffolding is missing marker: {marker!r}"
+                "Practice-test scaffolding is missing marker: "
+                f"{marker!r}"
             )
 
 
@@ -288,6 +295,7 @@ def main() -> None:
     checks = StarterChecks()
     check_source(checks)
     check_pseudocode(checks)
+    check_sdw(checks)
     check_tests(checks)
     checks.finish()
 

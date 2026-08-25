@@ -4,8 +4,8 @@ Input:
     TODO: Identify the major user inputs.
 
 Process:
-    TODO: Summarize validation, random selection, decisions, and repetition
-    from your pseudocode.
+    TODO: Summarize validation, random selection, decisions, and
+    repetition from your pseudocode.
 
 Output:
     TODO: Identify the major categories of console output.
@@ -26,8 +26,8 @@ def main() -> None:
     # TODO: Obtain and validate the player's first guess.
 
     # TODO: Repeat until the player guesses the random number.
-    #       Give appropriate too-low or too-high feedback for incorrect guesses.
-    #       Obtain and validate another guess when the game continues.
+    # Give too-low or too-high feedback for incorrect valid guesses.
+    # Obtain and validate another guess when the game continues.
 
     # TODO: Display a success message after the correct guess.
 

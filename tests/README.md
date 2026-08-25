@@ -1,82 +1,180 @@
+<!-- To see this file in a clean, formatted view, right-click on the filename and choose "Open Preview." -->
+
 # Test Phase | Optional Practice
 
-**SDLC progress:** [Start Here](../README.md) → [1 Analyze](../analysis/README.md) → [2 Design](../design/README.md) → [3 Construct (Practice)](../src/README.md) → **4 Test (Practice)** → [Submit](../README.md#submit-your-assignment)
+**Required assignment path:** [Start Here](../README.md) → [Analyze](../analysis/README.md) → [Design](../design/README.md) → [Submit](../README.md#3-submit-your-assignment)
+
+**Optional SDLC practice:** [Construct](../src/README.md) → **Test**
 
 ## Purpose
 
 Testing checks whether a constructed program behaves as its requirements and design say it should.
 
-For the Module Four Assignment, testing Python code is **optional practice**. You do not submit the test file or optional Python program for grading.
+For Module Four, testing Python code is **optional practice**. You do not submit the optional Python program, test file, or test output for grading.
 
-## Before You Test
+You can also apply testing ideas before code exists by tracing required behaviors through your pseudocode.
 
-Complete this phase only if you chose to complete `src/hilow_game.py`.
+## Deliverable
 
-First confirm that:
+**This phase produces no graded or submitted Module Four deliverable.**
 
-- Your graded pseudocode is complete.
-- Your optional Python program runs for at least one normal input sequence.
-- Your program behavior is intended to match your pseudocode.
+If testing exposes a design problem, correct the graded pseudocode and review it against the rubric again.
 
-## 1. Test Manually
+## What You Will Use
 
-Run the program:
+Use:
+
+- [`../src/hilow_game.py`](../src/hilow_game.py) — optional program you constructed;
+- your graded [`../design/hilow_game.pseudo`](../design/hilow_game.pseudo);
+- the official Higher/Lower Game Sample Output;
+- the [SRS behavior verification cases](../analysis/hilow_game_srs.md#4-behavior-verification-cases); and
+- [`test_hilow_game.py`](test_hilow_game.py) — provided optional practice tests.
+
+Do not modify the provided test file to make a failing test pass.
+
+## 1. Make Sure the Program Runs
+
+Before automated testing, run your optional program yourself from the repository root:
 
 ```bash
 python3 src/hilow_game.py
 ```
 
-Use the official Higher/Lower Game Sample Output and the acceptance conditions in [`../analysis/hilow_game_srs.md`](../analysis/hilow_game_srs.md).
+On Windows, if your environment uses `python` rather than `python3`, use:
 
-Across several runs, check:
+```powershell
+python src/hilow_game.py
+```
 
-- Valid lower and upper bounds
-- Invalid bounds followed by valid bounds
-- A guess below the selected range
-- A guess above the selected range
-- A valid guess below the random number
-- A valid guess above the random number
-- A correct guess
-- Several guesses before the correct guess
+If Python reports a syntax or runtime error, return to the [Construct Phase](../src/README.md), correct one problem, and run the program again.
 
-Because the secret number is random, you may need more than one run to exercise every path.
+## 2. Test Manually
 
-## 2. Run the Optional Practice Tests
+Across several runs, check the required behaviors:
 
-The provided [`test_hilow_game.py`](test_hilow_game.py) script uses controlled test input and a controlled secret number so several paths can be checked repeatably.
+- valid lower and upper bounds;
+- invalid bounds followed by valid bounds;
+- a guess below the selected range;
+- a guess above the selected range;
+- a valid guess below the target number;
+- a valid guess above the target number;
+- a correct guess; and
+- several guesses before the correct guess.
 
-From the repository root:
+Because the target number is random, you may need more than one normal run to exercise every path.
+
+Compare actual behavior with the SRS, your pseudocode, and the official Sample Output.
+
+## 3. Optional: Run the Practice Tests
+
+The provided [`test_hilow_game.py`](test_hilow_game.py) script uses controlled input and a controlled target number so several paths can be checked repeatably.
+
+You have not studied Python testing yet. You are not expected to understand or modify all of the test code.
+
+From the repository root, run:
 
 ```bash
 python3 tests/test_hilow_game.py
 ```
 
-The practice tests are intentionally limited. They check important structural behavior without requiring one exact set of prompt or output sentences.
+The practice tests intentionally check only selected structural behavior. They do not require one exact set of prompt or output sentences.
 
-They assume you use the provided `randint` import in `src/hilow_game.py`. If you intentionally change that starter structure, use manual testing instead.
+They assume you keep the provided `randint` import in `src/hilow_game.py`. If you intentionally change that starter structure, use manual testing instead.
 
-## 3. Debug One Problem at a Time
+> [!NOTE]
+> These optional tests are not part of the active student Assignment Checks. A student can receive a green repository check without completing the optional Python program.
 
-If a test fails:
+## 4. Interpret the Results
 
-1. Read the failing case.
-2. Run your program manually with a similar sequence.
-3. Compare the behavior with the SRS and your pseudocode.
-4. Identify the first step where they differ.
-5. Make one small correction.
-6. Run the test again.
+### All Tests Pass
 
-If coding reveals a design error, revise the graded pseudocode so the design and optional implementation remain consistent.
+A passing test is normally reported as `ok`, and a fully passing run ends with `OK`.
 
-## Check Your Work
+That means the optional implementation satisfied the behaviors covered by these repository practice tests.
 
-- [ ] Invalid bounds cause another pair of bounds to be obtained.
-- [ ] Valid bounds are used to generate the secret number.
-- [ ] Out-of-range guesses are handled through validation.
-- [ ] Too-low and too-high valid guesses allow the game to continue.
-- [ ] A correct guess ends the guessing loop.
-- [ ] The program behavior still matches the pseudocode.
+It does **not** mean:
+
+- your pseudocode has been graded;
+- every rubric criterion is automatically satisfied; or
+- the assignment has been submitted.
+
+### A Test Fails
+
+Read:
+
+1. the failing test name;
+2. the behavior that the test expected; and
+3. any program output or assertion message shown.
+
+Then compare the same case with:
+
+- the SRS;
+- your pseudocode; and
+- your Python code.
+
+Find the **first place** where they stop agreeing.
+
+### The Program Has a Python Error
+
+If the program cannot run normally, the test output may report `ERROR` or show a Python traceback.
+
+Read the last part of the error information, correct one problem in `hilow_game.py`, run the program manually, and then rerun the tests.
+
+Do not edit `test_hilow_game.py` simply to remove a failure.
+
+## 5. Debug One Problem at a Time
+
+Testing is iterative:
+
+> **Test → Find a problem → Correct → Retest**
+
+A useful debugging sequence is:
+
+1. reproduce one failing behavior manually;
+2. check what the SRS requires;
+3. trace the same behavior through your pseudocode;
+4. compare those steps with the Python implementation;
+5. identify the first mismatch;
+6. correct the appropriate artifact; and
+7. retest before changing anything else.
+
+If coding reveals a design error, revise the graded pseudocode first and then bring the optional implementation back into alignment.
+
+## 6. Check Your Work
+
+- [ ] The optional program runs without a Python error.
+- [ ] I checked valid and invalid bound behavior.
+- [ ] I checked out-of-range guess behavior.
+- [ ] I checked too-low and too-high valid guesses.
+- [ ] I checked a correct guess.
+- [ ] I checked repeated guessing before success.
+- [ ] My program behavior remains consistent with my pseudocode.
+- [ ] If a test failed, I corrected the cause rather than modifying the provided test.
+- [ ] If I changed the graded pseudocode, I reviewed it again against the official rubric.
+
+## Help and Support
+
+If you have difficulty:
+
+- Review the [SRS behavior verification cases](../analysis/hilow_game_srs.md#4-behavior-verification-cases).
+- Review [Construct](../src/README.md) for syntax, indentation, and incremental-development guidance.
+- See the [Module Four Assignment Wiki](https://github.com/GC-STEM/it140-m4-assignment/wiki) for supplemental testing and debugging explanations.
+- Use [GitHub Discussions](https://github.com/GC-STEM/it140-m4-assignment/discussions) for questions about optional practice tools.
+- Use [GitHub Issues](https://github.com/GC-STEM/it140-m4-assignment/issues) to report a technical problem with the provided test file or repository checks.
+- Contact your instructor through D2L Brightspace for assignment requirements, grading, or feedback.
 
 ## Next Step
 
-Return to [Submit Your Assignment](../README.md#submit-your-assignment). Only the `.pseudo` file is required as the Module Four Assignment deliverable.
+Return to [Submit Your Assignment](../README.md#3-submit-your-assignment). Only `design/hilow_game.pseudo` is required for the Module Four submission.
+
+<!-- Artifact Metadata
+
+* Course: IT 140 - Introduction to Scripting
+* Artifact Title: Module Four Assignment | Test Phase
+* Artifact Type: Optional Python testing-practice guidance
+* Artifact Purpose: Help students test and debug the optional Higher/Lower Game implementation while keeping testing outside the graded Module Four requirements.
+* Artifact Version: {{semantic version number}}
+* Artifact Date: {{artifact date in YYYY-MM-DD format}}
+* Development Status: {{development status}}
+
+-->

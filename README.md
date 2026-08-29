@@ -1,27 +1,37 @@
-<!-- To see this file in a clean, formatted view, right-click on the filename and choose "Open Preview." -->
+<!-- To see this file in a clean, formatted view, select "Text Editor ▼" in the upper-right corner of the editor, then select "Markdown Preview". -->
 
-# IT 140 Module Four Assignment
+# IT 140 Module Four Assignment | Pseudocode Revisited
 
 ---
 
 > [!IMPORTANT]
 > **GitHub repository options**
 >
-> If you are completing this repository as part of your IT 140 assignment, do not use the GitHub options in the upper-right corner except as follows:
+> **Do not select Fork or Use this template.** These options will interfere with the repository setup commands later in this README.
 >
-> - 🟡 **Watch — Not recommended:** Notifications may confuse students and are not needed.
-> - 🔴 **Fork — Do not use:** It will break the code later in this README file.
-> - 🟢 **Star — Recommended:** Later code will bookmark this repository so it is easier to find later.
-> - 🔴 **Use this template — Do not use:** It will break the code later in this README file.
->
-> **Faculty**: Consider selecting **Watch** → **Custom** → **Releases + Issues** to receive major repository updates and follow reported problems.
+> - 🚫 **Fork — Do not use**
+> - 🚫 **Use this template — Do not use**
+> - ⭐ **Star** — The setup commands later in this README will bookmark this repository so you can find it more easily.
+> - 👁️ **Watch**
+>   - **Students:** Not recommended. Watching is not needed and may generate unnecessary notifications.
+>   - **Faculty:** Consider selecting **Watch → Custom → Releases + Issues** to receive major repository updates and follow reported issues.
 
 ---
 
-- **Course:** IT 140 - *Introduction to Scripting*
-- **Activity:** Module Four Assignment
-- **Design problem:** Higher/Lower Game
-- **Graded deliverable:**
+> [!NOTE]
+> **🆕 New for 2026 C-5:** IT 140 now uses GitHub repositories to provide assignment starter files, development resources, and supporting documentation.
+>
+> If you find a problem with this GitHub repository or its instructions, or have a suggestion for improvement, please open [GitHub Issues](https://github.com/GC-STEM/it140-m4-assignment/issues) to review existing issues or create a new issue.
+
+---
+
+- **Course**: IT 140 - *Introduction to Scripting*
+- **Task Title**: 4-3: Pseudocode Revisited
+- **Task Type**: Required, graded, one submission required
+- **Repository Version**: 1.0.0
+- **Repository Version Date**: 08/29/2026
+- **Design Problem**: Higher/Lower Game
+- **Graded Deliverable**:
   - [`design/hilow_game.pseudo`](design/hilow_game.pseudo)
 
 **Required assignment progress:** **0 Start Here** → [1 Analyze](analysis/README.md) → [2 Design](design/README.md) → [3 Submit](#3-submit-your-assignment)
@@ -316,16 +326,3 @@ Use the [Module Four Assignment Wiki](https://github.com/GC-STEM/it140-m4-assign
 - Contact your instructor through D2L Brightspace for assignment requirements, grading, feedback, or course-specific questions.
 
 Do not post your completed graded pseudocode publicly when asking for help.
-
-<!-- Artifact Metadata
-
-* Course: IT 140 - Introduction to Scripting
-* Artifact Title: Module Four Assignment Repository README
-* Artifact Type: Required assignment guidance
-* Artifact Purpose: Guide students through setup, analysis, pseudocode design, submission, and optional SDLC practice for the Module Four Assignment.
-* Artifact Description: Students create and submit Higher/Lower Game pseudocode; optional construction and testing practice extends the assignment through the simplified SDLC without adding graded deliverables.
-* Artifact Version: {{semantic version number}}
-* Artifact Date: {{artifact date in YYYY-MM-DD format}}
-* Development Status: {{development status}}
-
--->

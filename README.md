@@ -28,8 +28,8 @@
 - **Course**: IT 140 - *Introduction to Scripting*
 - **Task Title**: 4-3: Pseudocode Revisited
 - **Task Type**: Required, graded, one submission required
-- **Repository Version**: 1.0.0
-- **Repository Version Date**: 08/29/2026
+- **Repository Version**: 1.0.1
+- **Repository Version DTG**: 2026-08-30-07-01
 - **Design Problem**: Higher/Lower Game
 - **Graded Deliverable**:
   - [`design/hilow_game.pseudo`](design/hilow_game.pseudo)

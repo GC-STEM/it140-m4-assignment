@@ -133,7 +133,7 @@ Then run:
 ```bash
 cd ~/Repos
 gh auth setup-git
-gh api --method PUT /user/starred/GC-STEM/it140-m4-assignment
+gh api --method PUT user/starred/GC-STEM/it140-m4-assignment
 gh repo create it140-m4-assignment --template GC-STEM/it140-m4-assignment --private --clone
 cd it140-m4-assignment
 git remote -v

@@ -11,19 +11,40 @@
 START hilow_game
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    Obtain the lower bound from the user
+    Obtain the upper bound from the user
+
+    WHILE lower bound is greater than or equal to upper bound
+        Display "Invalid range. The lower bound must be less than the upper bound."
+        Obtain the lower bound from the user
+        Obtain the upper bound from the user
+    END WHILE
 
     # Establish the number the player is trying to guess.
-    TODO: Generate the required random number from the valid range.
+    Generate a random number between the lower bound and upper bound
+    Store the random number as the target number
 
     # Play the game.
-    TODO: Obtain and validate a guess using the selected bounds.
-    TODO: Repeat the required game behavior until the correct guess.
-        TODO: Compare a valid guess and provide the required feedback.
-        TODO: Obtain and validate another guess when play continues.
+    Obtain a guess from the user
+
+    WHILE guess is less than the lower bound OR guess is greater than the upper bound
+        Display "Invalid range. Enter a number between the lower and upper bounds."
+        Obtain another guess from the user
+    END WHILE
+
+    WHILE guess is not equal to the target number
+        IF guess is less than the target number
+            Display "Your guess is too low."
+        ELSE
+            Display "Your guess is too high."
+        END IF
+        
+        Obtain another guess from the user
+        WHILE guess is less than the lower bound OR guess is greater than the upper bound
+            Display "Invalid guess. Enter a number between the lower and upper bounds."
+            Obtain another guess from the user
+        END WHILE
+    END WHILE
+Display " You guessed the correct number!"
 
 END hilow_game
-
-# === References ===
-# TODO: Add references for sources you used, or delete this line if unused.

@@ -11,17 +11,41 @@
 START hilow_game
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    OUTPUT "Enter the lower bound: "
+    INPUT lowerBound
+    OUTPUT "Enter the upper bound: "
+    INPUT upperBound
+
+    WHILE upperBound <= lowerBound
+        OUTPUT "Error: Upper bound must be greater than lower bound."
+        OUTPUT "Enter the lower bound: "
+        INPUT lowerBound
+        OUTPUT "Enter the upper bound: "
+        INPUT upperBound
+    ENDWHILE
 
     # Establish the number the player is trying to guess.
-    TODO: Generate the required random number from the valid range.
+    secretNumber = RANDOM(lowerBound, upperBound)
 
     # Play the game.
-    TODO: Obtain and validate a guess using the selected bounds.
-    TODO: Repeat the required game behavior until the correct guess.
-        TODO: Compare a valid guess and provide the required feedback.
-        TODO: Obtain and validate another guess when play continues.
+    OUTPUT "I am thinking of a number between " + lowerBound + " and " + upperBound + "."
+    OUTPUT "Enter your guess: "
+    INPUT guess
+
+    WHILE guess != secretNumber
+        IF guess < lowerBound OR guess > upperBound THEN
+            OUTPUT "Your guess is out of range. Please guess between " + lowerBound + " and " + upperBound + "."
+        ELSEIF guess < secretNumber THEN
+            OUTPUT "Too low! Guess higher."
+        ELSE
+            OUTPUT "Too high! Guess lower."
+        ENDIF
+
+        OUTPUT "Enter your next guess: "
+        INPUT guess
+    ENDWHILE
+
+    OUTPUT "Congratulations! You guessed the correct number."
 
 END hilow_game
 

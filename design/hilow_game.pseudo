@@ -1,29 +1,51 @@
-# IT 140 Module Four Assignment
-# Higher/Lower Game Pseudocode Template
-#
-# Complete the TODO prompts below with your own pseudocode.
-# Keep this file in .pseudo format for submission.
-#
-# Use clear indentation to show decisions and repeated behavior.
-# Your finished pseudocode should address every requirement in the
-# current Module Four Assignment Guidelines and Rubric.
-
 START hilow_game
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    OUTPUT "Enter the lower bound: "
+    INPUT lower_bound
+    OUTPUT "Enter the upper bound: "
+    INPUT upper_bound
+
+    WHILE upper_bound <= lower_bound
+        OUTPUT "Error: Upper bound must be greater than lower bound."
+        OUTPUT "Re-enter the upper bound: "
+        INPUT upper_bound
+    END WHILE
 
     # Establish the number the player is trying to guess.
-    TODO: Generate the required random number from the valid range.
+    secret_number = RANDOM_INTEGER(lower_bound, upper_bound)
 
     # Play the game.
-    TODO: Obtain and validate a guess using the selected bounds.
-    TODO: Repeat the required game behavior until the correct guess.
-        TODO: Compare a valid guess and provide the required feedback.
-        TODO: Obtain and validate another guess when play continues.
+    OUTPUT "Enter your guess between ", lower_bound, " and ", upper_bound, ": "
+    INPUT guess
+
+    # Validate the initial guess
+    WHILE guess < lower_bound OR guess > upper_bound
+        OUTPUT "Error: Guess must be between ", lower_bound, " and ", upper_bound, "."
+        OUTPUT "Re-enter your guess: "
+        INPUT guess
+    END WHILE
+
+    # Game loop until the correct number is guessed
+    WHILE guess != secret_number
+        IF guess < secret_number THEN
+            OUTPUT "Too low!"
+        ELSE
+            OUTPUT "Too high!"
+        END IF
+        
+        OUTPUT "Enter your next guess: "
+        INPUT guess
+
+        # Validate the new guess
+        WHILE guess < lower_bound OR guess > upper_bound
+            OUTPUT "Error: Guess must be between ", lower_bound, " and ", upper_bound, "."
+            OUTPUT "Re-enter your guess: "
+            INPUT guess
+        END WHILE
+    END WHILE
+
+    OUTPUT "Congratulations! You guessed the correct number: ", secret_number
 
 END hilow_game
 
-# === References ===
-# TODO: Add references for sources you used, or delete this line if unused.

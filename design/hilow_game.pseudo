@@ -11,19 +11,46 @@
 START hilow_game
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    GET lower_bound
+    GET upper_bound
+
+    WHILE lower_bound >= upper_bound
+        PUT "The lower bound must be less than the upper bound."
+        GET lower_bound
+        GET upper_bound
+    ENDWHILE
 
     # Establish the number the player is trying to guess.
-    TODO: Generate the required random number from the valid range.
+    LET random_number = RANDOM number between lower_bound and upper_bound
 
     # Play the game.
-    TODO: Obtain and validate a guess using the selected bounds.
-    TODO: Repeat the required game behavior until the correct guess.
-        TODO: Compare a valid guess and provide the required feedback.
-        TODO: Obtain and validate another guess when play continues.
+    GET guess
+
+    WHILE guess < lower_bound OR guess > upper_bound
+        PUT "Guess must be between the lower and upper bounds."
+        GET guess
+    ENDWHILE
+
+    WHILE guess != random_number
+
+        IF guess < random_number
+            PUT "Nope, too low."
+        ELSE
+            PUT "Nope, too high."
+        ENDIF
+
+        GET guess
+
+        WHILE guess < lower_bound OR guess > upper_bound
+            PUT "Guess must be between the lower and upper bounds."
+            GET guess
+        ENDWHILE
+
+    ENDWHILE
+
+    PUT "You got it!"
 
 END hilow_game
 
 # === References ===
-# TODO: Add references for sources you used, or delete this line if unused.
+# IT 140 Higher/Lower Game Sample Output, Southern New Hampshire University

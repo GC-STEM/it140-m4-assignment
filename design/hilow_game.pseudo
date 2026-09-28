@@ -11,19 +11,47 @@
 START hilow_game
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    OUTPUT "Please enter the lower bound:"
+    INPUT lower_bound
 
+    OUTPUT "Please enter the upper bound:"
+    INPUT upper_bound
+
+    WHILE lower_bound >= upper_bound DO
+        OUTPUT "Invalid entry. The lower bound must be smaller than the upper bound."
+        OUTPUT "Please enter the lower bound again:"
+        INPUT lower_bound
+        OUTPUT "Please enter the upper bound again:"
+        INPUT upper_bound
+   ENDWHILE
+    
     # Establish the number the player is trying to guess.
-    TODO: Generate the required random number from the valid range.
-
+    target_number = RANDOM_INTEGER(lower_bound, upper_bound)
+    guessed_correctly = FALSE
     # Play the game.
-    TODO: Obtain and validate a guess using the selected bounds.
-    TODO: Repeat the required game behavior until the correct guess.
-        TODO: Compare a valid guess and provide the required feedback.
-        TODO: Obtain and validate another guess when play continues.
 
+    WHILE guessed_correctly IS FALSE DO
+        OUTPUT "Enter your guess between " + lower_bound + " and " + upper_bound + ":"
+        INPUT user_guess
+
+        # Validate if guess is within bounds
+        WHILE user_guess < lower_bound OR user_guess > upper_bound DO
+            OUTPUT "Out of range! Enter a number between " + lower_bound + " and " + upper_bound + ":" 
+            INPUT user_guess
+        ENDWHILE
+
+       IF user_guess < target_number THEN
+           OUTPUT "Too low! Try a higher number."
+       ELSE IF user_guess > target_number THEN
+           OUTPUT "Too high! Try a lower number."
+       ELSE
+           OUTPUT "Congratulations! You guessed the right number!"
+           guessed_correctly = TRUE
+       ENDIF
+    ENDWHILE
 END hilow_game
 
 # === References ===
-# TODO: Add references for sources you used, or delete this line if unused.
+# Google G. (2026). Generative AI assistance.
+# Southern New Hampshire University. (2026). IT 140 Module Four Assignment Guidelines and Rubric. SNHU Brightspace.
+# zyBooks. (2026). IT 140: Introduction to Scripting (SNHU Edition). Wiley/zyBooks.

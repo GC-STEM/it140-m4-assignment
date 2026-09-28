@@ -9,21 +9,62 @@
 # current Module Four Assignment Guidelines and Rubric.
 
 START hilow_game
+    OUTPUT "Welcome to the higher/lower game, Bella!"
 
     # Establish a valid guessing range.
-    TODO: Obtain the lower and upper bounds.
-    TODO: Repeat as needed until the bounds satisfy the requirement.
+    OUTPUT "Enter the lower bound:"
+    INPUT lower_bound
+
+    OUTPUT "Enter the upper bound:"
+    INPUT upper_bound
+
+    WHILE lower_bound >= upper_bound
+        OUTPUT "Invalid range. The lower bound must be less than the upper bound."
+
+        OUTPUT "Enter the lower bound:"
+        INPUT lower_bound
+
+        OUTPUT "Enter the upper bound:"
+        INPUT upper_bound
+    END WHILE
 
     # Establish the number the player is trying to guess.
-    TODO: Generate the required random number from the valid range.
+    SET secret_number = RANDOM INTEGER BETWEEN lower_bound AND upper_bound
+
 
     # Play the game.
-    TODO: Obtain and validate a guess using the selected bounds.
-    TODO: Repeat the required game behavior until the correct guess.
-        TODO: Compare a valid guess and provide the required feedback.
-        TODO: Obtain and validate another guess when play continues.
+    OUTPUT "Great, now guess a number between lower_bound and upper_bound:"
+    INPUT guess
+
+    WHILE guess < lower_bound OR guess > upper_bound
+        OUTPUT "Invalid guess. Enter a number between the lower and upper bounds."
+        OUTPUT "Guess another number:"
+        INPUT guess
+    END WHILE
+
+    WHILE guess != secret_number
+        IF guess < secret_number
+            OUTPUT "Nope, too low."
+        ELSE
+            OUTPUT "Nope, too high."
+        END IF
+
+        OUTPUT "Guess another number:"
+        INPUT guess
+
+        WHILE guess < lower_bound OR guess > upper_bound
+            OUTPUT "Invalid guess. Enter a number between the lower and upper bounds."
+            OUTPUT "Guess another number:"
+            INPUT guess
+        END WHILE
+
+    END WHILE
+
+    OUTPUT "Congratulations! You guessed the correct number."
 
 END hilow_game
 
-# === References ===
-# TODO: Add references for sources you used, or delete this line if unused.
+# References
+#
+# Anthropic. (2026, September 28). IT 140 pseudocode support
+#     [Generative AI chat]. Claude.
